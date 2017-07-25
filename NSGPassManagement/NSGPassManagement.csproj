@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9A280A5-EC3D-4E81-9609-3EA1EAF52AA7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NSGPassManagement</RootNamespace>
+    <AssemblyName>NSGPassManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\MyProjects\NSGPassManagement\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>NSG PASS Management</ProductName>
+    <PublisherName>Mrida Systems and Technology</PublisherName>
+    <SuiteName>NSG PASS Management</SuiteName>
+    <DisallowUrlActivation>true</DisallowUrlActivation>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>3A9DC12696D60A9C986DF2E295040A249FAD13DA</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>NSGVisitorManagement_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>NSGPassManagement.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>nsgpms_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.WIA">
+      <HintPath>Resources\Interop.WIA.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Scanner.cs" />
+    <Compile Include="Classes\ThermalPrinter.cs" />
+    <Compile Include="Classes\DBOperation.cs" />
+    <Compile Include="Classes\Encryptor.cs" />
+    <Compile Include="Classes\GlobalClass.cs" />
+    <Compile Include="Classes\PrintDirect.cs" />
+    <Compile Include="Classes\Validation.cs" />
+    <Compile Include="Classes\VisitorDetails.cs" />
+    <Compile Include="Classes\WebCamera.cs" />
+    <Compile Include="Classes\WIAScanner.cs" />
+    <Compile Include="DAL\CivilianPassDetail.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CivilianPassDetailView.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CivilianVehiclePassView.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CoreCity.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CoreIdentityType.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CorePassType.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CoreQuarterType.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CoreRank.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CoreRelationship.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CoreState.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CoreUnit.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CoreUser.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\ErrorLog.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GuestDependantPassDetail.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GuestDependentPassDetailView.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\NSGEmployee.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\NSGPass.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\NSGPassManagementModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSGPassManagementModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\NSGPassManagementModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\NSGPassManagementModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSGPassManagementModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\NSGPersonalVehiclePassView.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\OutlivingPassDetail.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\OutlivingPassView.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PassDocument.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PassHolderDetailsGet_Result.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\VehiclePassDetail.cs">
+      <DependentUpon>NSGPassManagementModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmDocumentScanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmDocumentScanner.Designer.cs">
+      <DependentUpon>frmDocumentScanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCapturePhoto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCapturePhoto.Designer.cs">
+      <DependentUpon>frmCapturePhoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCreateUser.Designer.cs">
+      <DependentUpon>frmCreateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMainPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMainPage.Designer.cs">
+      <DependentUpon>frmMainPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Program.cs" />
+    <Compile Include="Forms\frmMasterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMasterList.Designer.cs">
+      <DependentUpon>frmMasterList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmNSGPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmNSGPass.Designer.cs">
+      <DependentUpon>frmNSGPass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPassHolderSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPassHolderSearch.Designer.cs">
+      <DependentUpon>frmPassHolderSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmMastersListEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMastersListEdit.Designer.cs">
+      <DependentUpon>frmMastersListEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmPassPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPassPreview.Designer.cs">
+      <DependentUpon>frmPassPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmReportViewer.Designer.cs">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NSGPassManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NSGPassManagementDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Forms\frmDocumentScanner.resx">
+      <DependentUpon>frmDocumentScanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCapturePhoto.resx">
+      <DependentUpon>frmCapturePhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmCreateUser.resx">
+      <DependentUpon>frmCreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMainPage.resx">
+      <DependentUpon>frmMainPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMasterList.resx">
+      <DependentUpon>frmMasterList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmNSGPass.resx">
+      <DependentUpon>frmNSGPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPassHolderSearch.resx">
+      <DependentUpon>frmPassHolderSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMastersListEdit.resx">
+      <DependentUpon>frmMastersListEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPassPreview.resx">
+      <DependentUpon>frmPassPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmReportViewer.resx">
+      <DependentUpon>frmReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\CivilianLabourPass - Copy.rdlc" />
+    <EmbeddedResource Include="Reports\GuestPass.rdlc" />
+    <EmbeddedResource Include="Reports\CivilianVehiclePass.rdlc" />
+    <EmbeddedResource Include="Reports\OutlivingPass.rdlc" />
+    <EmbeddedResource Include="Reports\NSGPersonalVehiclePass.rdlc" />
+    <EmbeddedResource Include="Reports\DependentPass.rdlc" />
+    <EmbeddedResource Include="Reports\CivilianRegularPass.rdlc" />
+    <EmbeddedResource Include="Reports\CivilianLabourPass.rdlc" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EntityDeploy Include="DAL\NSGPassManagementModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NSGPassManagementModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DAL\NSGPassManagementModel.edmx.diagram">
+      <DependentUpon>NSGPassManagementModel.edmx</DependentUpon>
+    </None>
+    <None Include="NSGPassManagementDataSet.xsc">
+      <DependentUpon>NSGPassManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NSGPassManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>NSGPassManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="NSGPassManagementDataSet.xss">
+      <DependentUpon>NSGPassManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NSGLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\NSGPassManagementModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NSGPassManagementModel.edmx</DependentUpon>
+      <LastGenOutput>NSGPassManagementModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\NSGPassManagementModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NSGPassManagementModel.edmx</DependentUpon>
+      <LastGenOutput>NSGPassManagementModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="nsgpms_icon.ico" />
+    <Content Include="Resources\Excel.ico" />
+    <Content Include="Resources\ExcelIcon.png" />
+    <Content Include="Resources\NSGVMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.ReportViewer.Common">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.DataVisualization">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.ReportViewer.ProcessingObjectModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

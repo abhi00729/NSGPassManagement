@@ -1,0 +1,2906 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NSGPassManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CivilianPassDetail">
+          <Key>
+            <PropertyRef Name="CivilianPassDetailID" />
+          </Key>
+          <Property Name="CivilianPassDetailID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NSGPassID" Type="bigint" Nullable="false" />
+          <Property Name="Designation" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ContractorName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreCity">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateID" Type="int" Nullable="false" />
+          <Property Name="CityName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreIdentityType">
+          <Key>
+            <PropertyRef Name="IdentityTypeID" />
+          </Key>
+          <Property Name="IdentityTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdentityType" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CorePassType">
+          <Key>
+            <PropertyRef Name="PassTypeID" />
+          </Key>
+          <Property Name="PassTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PassTypeName" Type="varchar" MaxLength="100" />
+          <Property Name="PassColor" Type="varchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreQuarterType">
+          <Key>
+            <PropertyRef Name="QuarterTypeID" />
+          </Key>
+          <Property Name="QuarterTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuarterTypeName" Type="varchar" MaxLength="100" />
+          <Property Name="MaxQuarterNumber" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreRank">
+          <Key>
+            <PropertyRef Name="RankID" />
+          </Key>
+          <Property Name="RankID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RankName" Type="varchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreRelationship">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Relationship" Type="varchar" MaxLength="100" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreState">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreUnit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnitName" Type="varchar" MaxLength="100" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CoreUser">
+          <Key>
+            <PropertyRef Name="CoreUserID" />
+          </Key>
+          <Property Name="CoreUserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmployeeID" Type="varchar" MaxLength="100" />
+          <Property Name="FirstName" Type="varchar" MaxLength="250" />
+          <Property Name="LastName" Type="varchar" MaxLength="250" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorLogID" />
+          </Key>
+          <Property Name="ErrorLogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SPName" Type="varchar" MaxLength="500" />
+          <Property Name="ErrorNumber" Type="int" />
+          <Property Name="ErrorSeverity" Type="int" />
+          <Property Name="ErrorState" Type="int" />
+          <Property Name="ErrorMessage" Type="nvarchar" MaxLength="4000" />
+          <Property Name="ErrorTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="GuestDependantPassDetail">
+          <Key>
+            <PropertyRef Name="GuestDependantPassDetailID" />
+          </Key>
+          <Property Name="GuestDependantPassDetailID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NSGPassID" Type="bigint" Nullable="false" />
+          <Property Name="IdentificationMark" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Height" Type="numeric" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="RelativeOf" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NSGEmployeeCode" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="RankID" Type="int" />
+          <Property Name="UnitID" Type="int" />
+          <Property Name="RelationshipID" Type="int" Nullable="false" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NSGEmployee">
+          <Key>
+            <PropertyRef Name="NSGEmployeeID" />
+          </Key>
+          <Property Name="NSGEmployeeID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NSGEmployeeCode" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="250" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="RankID" Type="int" />
+          <Property Name="UnitID" Type="int" />
+          <Property Name="QuarterTypeID" Type="int" />
+          <Property Name="QuarterNumber" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="NSGPass">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+          </Key>
+          <Property Name="NSGPassID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MachineID" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="PassTypeID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="250" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MobileNo" Type="varchar" MaxLength="15" />
+          <Property Name="GuardianName" Type="varchar" MaxLength="500" />
+          <Property Name="IssueDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="PassHolderAddress" Type="varchar" MaxLength="500" />
+          <Property Name="CityID" Type="bigint" />
+          <Property Name="StateID" Type="int" />
+          <Property Name="PassHolderPhoto" Type="image" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="OutlivingPassDetail">
+          <Key>
+            <PropertyRef Name="OutlivingPassDetailID" />
+          </Key>
+          <Property Name="OutlivingPassDetailID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NSGPassID" Type="bigint" Nullable="false" />
+          <Property Name="IdentificationMark" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="BloodGroup" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NSGEmployeeCode" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="RankID" Type="int" />
+          <Property Name="UnitID" Type="int" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PassDocument">
+          <Key>
+            <PropertyRef Name="PassDocumentID" />
+          </Key>
+          <Property Name="PassDocumentID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NSGPassID" Type="bigint" Nullable="false" />
+          <Property Name="DocumentName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DocumentPhoto" Type="image" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="VehiclePassDetail">
+          <Key>
+            <PropertyRef Name="VehiclePassDetailID" />
+          </Key>
+          <Property Name="VehiclePassDetailID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NSGPassID" Type="bigint" Nullable="false" />
+          <Property Name="RegistrationNumber" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="VehicleType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="VehicleMake" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NSGEmployeeCode" Type="varchar" MaxLength="250" />
+          <Property Name="RankID" Type="int" />
+          <Property Name="UnitID" Type="int" />
+          <Property Name="EntryUserID" Type="int" Nullable="false" />
+          <Property Name="EntryDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateUserID" Type="int" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="Designation" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NSGPassManagement.dbo.CivilianPassDetailView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CivilianPassDetailView">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+            <PropertyRef Name="IssueDate" />
+            <PropertyRef Name="ContractorName" />
+            <PropertyRef Name="Designation" />
+          </Key>
+          <Property Name="NSGPassID" Type="bigint" Nullable="false" />
+          <Property Name="IssueDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="FullName" Type="varchar" MaxLength="501" />
+          <Property Name="GuardianName" Type="varchar" MaxLength="500" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="ContractorName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Designation" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PassHolderAddress" Type="nvarchar" MaxLength="702" />
+          <Property Name="PassHolderPhoto" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NSGPassManagement.dbo.CivilianVehiclePassView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CivilianVehiclePassView">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+            <PropertyRef Name="IssueDate" />
+            <PropertyRef Name="RegistrationNumber" />
+            <PropertyRef Name="VehicleType" />
+            <PropertyRef Name="VehicleMake" />
+          </Key>
+          <Property Name="NSGPassID" Type="bigint" Nullable="false" />
+          <Property Name="IssueDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="FullName" Type="varchar" MaxLength="501" />
+          <Property Name="RegistrationNumber" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="VehicleType" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="VehicleMake" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Designation" Type="varchar" MaxLength="100" />
+          <Property Name="PassHolderPhoto" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NSGPassManagement.dbo.GuestDependentPassDetailView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GuestDependentPassDetailView">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+            <PropertyRef Name="IssueDate" />
+            <PropertyRef Name="IdentificationMark" />
+            <PropertyRef Name="RelativeOf" />
+            <PropertyRef Name="NSGEmployeeCode" />
+          </Key>
+          <Property Name="NSGPassID" Type="bigint" Nullable="false" />
+          <Property Name="IssueDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="FullName" Type="varchar" MaxLength="501" />
+          <Property Name="Relationship" Type="varchar" MaxLength="100" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="IdentificationMark" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="RelativeOf" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="NSGEmployeeCode" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="RankName" Type="varchar" MaxLength="100" />
+          <Property Name="UnitName" Type="varchar" MaxLength="100" />
+          <Property Name="PassHolderPhoto" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NSGPassManagement.dbo.NSGPersonalVehiclePassView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NSGPersonalVehiclePassView">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+            <PropertyRef Name="IssueDate" />
+            <PropertyRef Name="RegistrationNumber" />
+            <PropertyRef Name="VehicleType" />
+            <PropertyRef Name="VehicleMake" />
+          </Key>
+          <Property Name="NSGPassID" Type="bigint" Nullable="false" />
+          <Property Name="IssueDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="FullName" Type="varchar" MaxLength="501" />
+          <Property Name="NSGEmployeeCode" Type="varchar" MaxLength="250" />
+          <Property Name="RankName" Type="varchar" MaxLength="100" />
+          <Property Name="UnitName" Type="varchar" MaxLength="100" />
+          <Property Name="RegistrationNumber" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="VehicleType" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="VehicleMake" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PassHolderPhoto" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NSGPassManagement.dbo.OutlivingPassView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OutlivingPassView">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+            <PropertyRef Name="IssueDate" />
+            <PropertyRef Name="NSGEmployeeCode" />
+            <PropertyRef Name="BloodGroup" />
+            <PropertyRef Name="IdentificationMark" />
+          </Key>
+          <Property Name="NSGPassID" Type="bigint" Nullable="false" />
+          <Property Name="IssueDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="FullName" Type="varchar" MaxLength="501" />
+          <Property Name="NSGEmployeeCode" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="RankName" Type="varchar" MaxLength="100" />
+          <Property Name="UnitName" Type="varchar" MaxLength="100" />
+          <Property Name="BloodGroup" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="IdentificationMark" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PassHolderAddress" Type="nvarchar" MaxLength="702" />
+          <Property Name="PassHolderPhoto" Type="image" />
+        </EntityType>
+        <Association Name="FK_CivilianPassDetail_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="CivilianPassDetail" Type="Self.CivilianPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CivilianPassDetail">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CivilianPassDetail_NSGPassID_NSGPass_NSGPassID">
+          <End Role="NSGPass" Type="Self.NSGPass" Multiplicity="1" />
+          <End Role="CivilianPassDetail" Type="Self.CivilianPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NSGPass">
+              <PropertyRef Name="NSGPassID" />
+            </Principal>
+            <Dependent Role="CivilianPassDetail">
+              <PropertyRef Name="NSGPassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CivilianPassDetail_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="CivilianPassDetail" Type="Self.CivilianPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CivilianPassDetail">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreCity_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="CoreCity" Type="Self.CoreCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreCity">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreCity_StateID_CoreState_StateID">
+          <End Role="CoreState" Type="Self.CoreState" Multiplicity="1" />
+          <End Role="CoreCity" Type="Self.CoreCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreState">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="CoreCity">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreCity_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="CoreCity" Type="Self.CoreCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreCity">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CorePassType_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="CorePassType" Type="Self.CorePassType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CorePassType">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CorePassType_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="CorePassType" Type="Self.CorePassType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CorePassType">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreQuarterType_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="CoreQuarterType" Type="Self.CoreQuarterType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreQuarterType">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreQuarterType_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="CoreQuarterType" Type="Self.CoreQuarterType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreQuarterType">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreRank_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="CoreRank" Type="Self.CoreRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreRank">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreRank_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="CoreRank" Type="Self.CoreRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreRank">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreRelationship_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="CoreRelationship" Type="Self.CoreRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreRelationship">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreRelationship_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="CoreRelationship" Type="Self.CoreRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreRelationship">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreState_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="CoreState" Type="Self.CoreState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreState">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreState_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="CoreState" Type="Self.CoreState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreState">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreUnit_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="CoreUnit" Type="Self.CoreUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreUnit">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreUnit_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="CoreUnit" Type="Self.CoreUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreUnit">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="GuestDependantPassDetail" Type="Self.GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_NSGPassID_NSGPass_NSGPassID">
+          <End Role="NSGPass" Type="Self.NSGPass" Multiplicity="1" />
+          <End Role="GuestDependantPassDetail" Type="Self.GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NSGPass">
+              <PropertyRef Name="NSGPassID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="NSGPassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_RankID_CoreRank_RankID">
+          <End Role="CoreRank" Type="Self.CoreRank" Multiplicity="0..1" />
+          <End Role="GuestDependantPassDetail" Type="Self.GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreRank">
+              <PropertyRef Name="RankID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="RankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_RelationshipID_CoreRelationship_RelationshipID">
+          <End Role="CoreRelationship" Type="Self.CoreRelationship" Multiplicity="1" />
+          <End Role="GuestDependantPassDetail" Type="Self.GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreRelationship">
+              <PropertyRef Name="RelationshipID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="RelationshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_UnitID_CoreUnit_UnitID">
+          <End Role="CoreUnit" Type="Self.CoreUnit" Multiplicity="0..1" />
+          <End Role="GuestDependantPassDetail" Type="Self.GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="GuestDependantPassDetail" Type="Self.GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IdentityType_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="CoreIdentityType" Type="Self.CoreIdentityType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreIdentityType">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IdentityType_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="CoreIdentityType" Type="Self.CoreIdentityType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreIdentityType">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGEmployee_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="NSGEmployee" Type="Self.NSGEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="NSGEmployee">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGEmployee_QuarterTypeID_CoreQuarterType_QuarterTypeID">
+          <End Role="CoreQuarterType" Type="Self.CoreQuarterType" Multiplicity="0..1" />
+          <End Role="NSGEmployee" Type="Self.NSGEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreQuarterType">
+              <PropertyRef Name="QuarterTypeID" />
+            </Principal>
+            <Dependent Role="NSGEmployee">
+              <PropertyRef Name="QuarterTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGEmployee_RankID_CoreRank_RankID">
+          <End Role="CoreRank" Type="Self.CoreRank" Multiplicity="0..1" />
+          <End Role="NSGEmployee" Type="Self.NSGEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreRank">
+              <PropertyRef Name="RankID" />
+            </Principal>
+            <Dependent Role="NSGEmployee">
+              <PropertyRef Name="RankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGEmployee_UnitID_CoreUnit_UnitID">
+          <End Role="CoreUnit" Type="Self.CoreUnit" Multiplicity="0..1" />
+          <End Role="NSGEmployee" Type="Self.NSGEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="NSGEmployee">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGEmployee_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="NSGEmployee" Type="Self.NSGEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="NSGEmployee">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGPass_CityID_CoreCity_CityID">
+          <End Role="CoreCity" Type="Self.CoreCity" Multiplicity="0..1" />
+          <End Role="NSGPass" Type="Self.NSGPass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreCity">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="NSGPass">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGPass_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="NSGPass" Type="Self.NSGPass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="NSGPass">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGPass_PassTypeID_CorePassType_PassTypeID">
+          <End Role="CorePassType" Type="Self.CorePassType" Multiplicity="1" />
+          <End Role="NSGPass" Type="Self.NSGPass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorePassType">
+              <PropertyRef Name="PassTypeID" />
+            </Principal>
+            <Dependent Role="NSGPass">
+              <PropertyRef Name="PassTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGPass_StateID_CoreState_StateID">
+          <End Role="CoreState" Type="Self.CoreState" Multiplicity="0..1" />
+          <End Role="NSGPass" Type="Self.NSGPass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreState">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="NSGPass">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGPass_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="NSGPass" Type="Self.NSGPass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="NSGPass">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OutlivingPassDetail_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="OutlivingPassDetail" Type="Self.OutlivingPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="OutlivingPassDetail">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OutlivingPassDetail_NSGPassID_NSGPass_NSGPassID">
+          <End Role="NSGPass" Type="Self.NSGPass" Multiplicity="1" />
+          <End Role="OutlivingPassDetail" Type="Self.OutlivingPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NSGPass">
+              <PropertyRef Name="NSGPassID" />
+            </Principal>
+            <Dependent Role="OutlivingPassDetail">
+              <PropertyRef Name="NSGPassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OutlivingPassDetail_RankID_CoreRank_RankID">
+          <End Role="CoreRank" Type="Self.CoreRank" Multiplicity="0..1" />
+          <End Role="OutlivingPassDetail" Type="Self.OutlivingPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreRank">
+              <PropertyRef Name="RankID" />
+            </Principal>
+            <Dependent Role="OutlivingPassDetail">
+              <PropertyRef Name="RankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OutlivingPassDetail_UnitID_CoreUnit_UnitID">
+          <End Role="CoreUnit" Type="Self.CoreUnit" Multiplicity="0..1" />
+          <End Role="OutlivingPassDetail" Type="Self.OutlivingPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="OutlivingPassDetail">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OutlivingPassDetail_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="OutlivingPassDetail" Type="Self.OutlivingPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="OutlivingPassDetail">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PassDocument_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="PassDocument" Type="Self.PassDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="PassDocument">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PassDocument_NSGPassID_NSGPass_NSGPassID">
+          <End Role="NSGPass" Type="Self.NSGPass" Multiplicity="1" />
+          <End Role="PassDocument" Type="Self.PassDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NSGPass">
+              <PropertyRef Name="NSGPassID" />
+            </Principal>
+            <Dependent Role="PassDocument">
+              <PropertyRef Name="NSGPassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PassDocument_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="PassDocument" Type="Self.PassDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="PassDocument">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VehiclePassDetail_EntryUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="1" />
+          <End Role="VehiclePassDetail" Type="Self.VehiclePassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="VehiclePassDetail">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VehiclePassDetail_NSGPassID_NSGPass_NSGPassID">
+          <End Role="NSGPass" Type="Self.NSGPass" Multiplicity="1" />
+          <End Role="VehiclePassDetail" Type="Self.VehiclePassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NSGPass">
+              <PropertyRef Name="NSGPassID" />
+            </Principal>
+            <Dependent Role="VehiclePassDetail">
+              <PropertyRef Name="NSGPassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VehiclePassDetail_RankID_CoreRank_RankID">
+          <End Role="CoreRank" Type="Self.CoreRank" Multiplicity="0..1" />
+          <End Role="VehiclePassDetail" Type="Self.VehiclePassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreRank">
+              <PropertyRef Name="RankID" />
+            </Principal>
+            <Dependent Role="VehiclePassDetail">
+              <PropertyRef Name="RankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VehiclePassDetail_UnitID_CoreUnit_UnitID">
+          <End Role="CoreUnit" Type="Self.CoreUnit" Multiplicity="0..1" />
+          <End Role="VehiclePassDetail" Type="Self.VehiclePassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="VehiclePassDetail">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VehiclePassDetail_UpdateUserID_CoreUser_CoreUserID">
+          <End Role="CoreUser" Type="Self.CoreUser" Multiplicity="0..1" />
+          <End Role="VehiclePassDetail" Type="Self.VehiclePassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="VehiclePassDetail">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="PassHolderDetailsGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IssueDate" Type="datetime" Mode="In" />
+          <Parameter Name="ExpiryDate" Type="datetime" Mode="In" />
+          <Parameter Name="PassID" Type="bigint" Mode="In" />
+          <Parameter Name="PersonName" Type="varchar" Mode="In" />
+          <Parameter Name="PassTypeID" Type="int" Mode="In" />
+          <Parameter Name="VehicleNumber" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="NSGPassManagementModelStoreContainer">
+          <EntitySet Name="CivilianPassDetail" EntityType="Self.CivilianPassDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreCity" EntityType="Self.CoreCity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreIdentityType" EntityType="Self.CoreIdentityType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CorePassType" EntityType="Self.CorePassType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreQuarterType" EntityType="Self.CoreQuarterType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreRank" EntityType="Self.CoreRank" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreRelationship" EntityType="Self.CoreRelationship" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreState" EntityType="Self.CoreState" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreUnit" EntityType="Self.CoreUnit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CoreUser" EntityType="Self.CoreUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GuestDependantPassDetail" EntityType="Self.GuestDependantPassDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NSGEmployee" EntityType="Self.NSGEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NSGPass" EntityType="Self.NSGPass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OutlivingPassDetail" EntityType="Self.OutlivingPassDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PassDocument" EntityType="Self.PassDocument" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VehiclePassDetail" EntityType="Self.VehiclePassDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CivilianPassDetailView" EntityType="Self.CivilianPassDetailView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CivilianPassDetailView].[NSGPassID] AS [NSGPassID], 
+    [CivilianPassDetailView].[IssueDate] AS [IssueDate], 
+    [CivilianPassDetailView].[ExpiryDate] AS [ExpiryDate], 
+    [CivilianPassDetailView].[FullName] AS [FullName], 
+    [CivilianPassDetailView].[GuardianName] AS [GuardianName], 
+    [CivilianPassDetailView].[BirthDate] AS [BirthDate], 
+    [CivilianPassDetailView].[ContractorName] AS [ContractorName], 
+    [CivilianPassDetailView].[Designation] AS [Designation], 
+    [CivilianPassDetailView].[PassHolderAddress] AS [PassHolderAddress], 
+    [CivilianPassDetailView].[PassHolderPhoto] AS [PassHolderPhoto]
+    FROM [dbo].[CivilianPassDetailView] AS [CivilianPassDetailView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CivilianVehiclePassView" EntityType="Self.CivilianVehiclePassView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CivilianVehiclePassView].[NSGPassID] AS [NSGPassID], 
+    [CivilianVehiclePassView].[IssueDate] AS [IssueDate], 
+    [CivilianVehiclePassView].[ExpiryDate] AS [ExpiryDate], 
+    [CivilianVehiclePassView].[FullName] AS [FullName], 
+    [CivilianVehiclePassView].[RegistrationNumber] AS [RegistrationNumber], 
+    [CivilianVehiclePassView].[VehicleType] AS [VehicleType], 
+    [CivilianVehiclePassView].[VehicleMake] AS [VehicleMake], 
+    [CivilianVehiclePassView].[Designation] AS [Designation], 
+    [CivilianVehiclePassView].[PassHolderPhoto] AS [PassHolderPhoto]
+    FROM [dbo].[CivilianVehiclePassView] AS [CivilianVehiclePassView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="GuestDependentPassDetailView" EntityType="Self.GuestDependentPassDetailView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GuestDependentPassDetailView].[NSGPassID] AS [NSGPassID], 
+    [GuestDependentPassDetailView].[IssueDate] AS [IssueDate], 
+    [GuestDependentPassDetailView].[ExpiryDate] AS [ExpiryDate], 
+    [GuestDependentPassDetailView].[FullName] AS [FullName], 
+    [GuestDependentPassDetailView].[Relationship] AS [Relationship], 
+    [GuestDependentPassDetailView].[BirthDate] AS [BirthDate], 
+    [GuestDependentPassDetailView].[IdentificationMark] AS [IdentificationMark], 
+    [GuestDependentPassDetailView].[RelativeOf] AS [RelativeOf], 
+    [GuestDependentPassDetailView].[NSGEmployeeCode] AS [NSGEmployeeCode], 
+    [GuestDependentPassDetailView].[RankName] AS [RankName], 
+    [GuestDependentPassDetailView].[UnitName] AS [UnitName], 
+    [GuestDependentPassDetailView].[PassHolderPhoto] AS [PassHolderPhoto]
+    FROM [dbo].[GuestDependentPassDetailView] AS [GuestDependentPassDetailView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NSGPersonalVehiclePassView" EntityType="Self.NSGPersonalVehiclePassView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NSGPersonalVehiclePassView].[NSGPassID] AS [NSGPassID], 
+    [NSGPersonalVehiclePassView].[IssueDate] AS [IssueDate], 
+    [NSGPersonalVehiclePassView].[ExpiryDate] AS [ExpiryDate], 
+    [NSGPersonalVehiclePassView].[FullName] AS [FullName], 
+    [NSGPersonalVehiclePassView].[NSGEmployeeCode] AS [NSGEmployeeCode], 
+    [NSGPersonalVehiclePassView].[RankName] AS [RankName], 
+    [NSGPersonalVehiclePassView].[UnitName] AS [UnitName], 
+    [NSGPersonalVehiclePassView].[RegistrationNumber] AS [RegistrationNumber], 
+    [NSGPersonalVehiclePassView].[VehicleType] AS [VehicleType], 
+    [NSGPersonalVehiclePassView].[VehicleMake] AS [VehicleMake], 
+    [NSGPersonalVehiclePassView].[PassHolderPhoto] AS [PassHolderPhoto]
+    FROM [dbo].[NSGPersonalVehiclePassView] AS [NSGPersonalVehiclePassView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OutlivingPassView" EntityType="Self.OutlivingPassView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OutlivingPassView].[NSGPassID] AS [NSGPassID], 
+    [OutlivingPassView].[IssueDate] AS [IssueDate], 
+    [OutlivingPassView].[ExpiryDate] AS [ExpiryDate], 
+    [OutlivingPassView].[FullName] AS [FullName], 
+    [OutlivingPassView].[NSGEmployeeCode] AS [NSGEmployeeCode], 
+    [OutlivingPassView].[RankName] AS [RankName], 
+    [OutlivingPassView].[UnitName] AS [UnitName], 
+    [OutlivingPassView].[BloodGroup] AS [BloodGroup], 
+    [OutlivingPassView].[IdentificationMark] AS [IdentificationMark], 
+    [OutlivingPassView].[PassHolderAddress] AS [PassHolderAddress], 
+    [OutlivingPassView].[PassHolderPhoto] AS [PassHolderPhoto]
+    FROM [dbo].[OutlivingPassView] AS [OutlivingPassView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CivilianPassDetail_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_CivilianPassDetail_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CivilianPassDetail" EntitySet="CivilianPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CivilianPassDetail_NSGPassID_NSGPass_NSGPassID" Association="Self.FK_CivilianPassDetail_NSGPassID_NSGPass_NSGPassID">
+            <End Role="NSGPass" EntitySet="NSGPass" />
+            <End Role="CivilianPassDetail" EntitySet="CivilianPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CivilianPassDetail_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_CivilianPassDetail_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CivilianPassDetail" EntitySet="CivilianPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreCity_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_CoreCity_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreCity" EntitySet="CoreCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreCity_StateID_CoreState_StateID" Association="Self.FK_CoreCity_StateID_CoreState_StateID">
+            <End Role="CoreState" EntitySet="CoreState" />
+            <End Role="CoreCity" EntitySet="CoreCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreCity_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_CoreCity_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreCity" EntitySet="CoreCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CorePassType_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_CorePassType_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CorePassType" EntitySet="CorePassType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CorePassType_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_CorePassType_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CorePassType" EntitySet="CorePassType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreQuarterType_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_CoreQuarterType_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreQuarterType" EntitySet="CoreQuarterType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreQuarterType_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_CoreQuarterType_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreQuarterType" EntitySet="CoreQuarterType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreRank_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_CoreRank_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreRank" EntitySet="CoreRank" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreRank_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_CoreRank_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreRank" EntitySet="CoreRank" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreRelationship_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_CoreRelationship_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreRelationship" EntitySet="CoreRelationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreRelationship_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_CoreRelationship_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreRelationship" EntitySet="CoreRelationship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreState_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_CoreState_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreState" EntitySet="CoreState" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreState_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_CoreState_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreState" EntitySet="CoreState" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreUnit_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_CoreUnit_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreUnit" EntitySet="CoreUnit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreUnit_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_CoreUnit_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreUnit" EntitySet="CoreUnit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_GuestDependantPassDetail_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_NSGPassID_NSGPass_NSGPassID" Association="Self.FK_GuestDependantPassDetail_NSGPassID_NSGPass_NSGPassID">
+            <End Role="NSGPass" EntitySet="NSGPass" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_RankID_CoreRank_RankID" Association="Self.FK_GuestDependantPassDetail_RankID_CoreRank_RankID">
+            <End Role="CoreRank" EntitySet="CoreRank" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_RelationshipID_CoreRelationship_RelationshipID" Association="Self.FK_GuestDependantPassDetail_RelationshipID_CoreRelationship_RelationshipID">
+            <End Role="CoreRelationship" EntitySet="CoreRelationship" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_UnitID_CoreUnit_UnitID" Association="Self.FK_GuestDependantPassDetail_UnitID_CoreUnit_UnitID">
+            <End Role="CoreUnit" EntitySet="CoreUnit" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_GuestDependantPassDetail_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IdentityType_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_IdentityType_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreIdentityType" EntitySet="CoreIdentityType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IdentityType_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_IdentityType_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="CoreIdentityType" EntitySet="CoreIdentityType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGEmployee_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_NSGEmployee_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="NSGEmployee" EntitySet="NSGEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGEmployee_QuarterTypeID_CoreQuarterType_QuarterTypeID" Association="Self.FK_NSGEmployee_QuarterTypeID_CoreQuarterType_QuarterTypeID">
+            <End Role="CoreQuarterType" EntitySet="CoreQuarterType" />
+            <End Role="NSGEmployee" EntitySet="NSGEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGEmployee_RankID_CoreRank_RankID" Association="Self.FK_NSGEmployee_RankID_CoreRank_RankID">
+            <End Role="CoreRank" EntitySet="CoreRank" />
+            <End Role="NSGEmployee" EntitySet="NSGEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGEmployee_UnitID_CoreUnit_UnitID" Association="Self.FK_NSGEmployee_UnitID_CoreUnit_UnitID">
+            <End Role="CoreUnit" EntitySet="CoreUnit" />
+            <End Role="NSGEmployee" EntitySet="NSGEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGEmployee_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_NSGEmployee_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="NSGEmployee" EntitySet="NSGEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGPass_CityID_CoreCity_CityID" Association="Self.FK_NSGPass_CityID_CoreCity_CityID">
+            <End Role="CoreCity" EntitySet="CoreCity" />
+            <End Role="NSGPass" EntitySet="NSGPass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGPass_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_NSGPass_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="NSGPass" EntitySet="NSGPass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGPass_PassTypeID_CorePassType_PassTypeID" Association="Self.FK_NSGPass_PassTypeID_CorePassType_PassTypeID">
+            <End Role="CorePassType" EntitySet="CorePassType" />
+            <End Role="NSGPass" EntitySet="NSGPass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGPass_StateID_CoreState_StateID" Association="Self.FK_NSGPass_StateID_CoreState_StateID">
+            <End Role="CoreState" EntitySet="CoreState" />
+            <End Role="NSGPass" EntitySet="NSGPass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGPass_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_NSGPass_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="NSGPass" EntitySet="NSGPass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OutlivingPassDetail_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_OutlivingPassDetail_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="OutlivingPassDetail" EntitySet="OutlivingPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OutlivingPassDetail_NSGPassID_NSGPass_NSGPassID" Association="Self.FK_OutlivingPassDetail_NSGPassID_NSGPass_NSGPassID">
+            <End Role="NSGPass" EntitySet="NSGPass" />
+            <End Role="OutlivingPassDetail" EntitySet="OutlivingPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OutlivingPassDetail_RankID_CoreRank_RankID" Association="Self.FK_OutlivingPassDetail_RankID_CoreRank_RankID">
+            <End Role="CoreRank" EntitySet="CoreRank" />
+            <End Role="OutlivingPassDetail" EntitySet="OutlivingPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OutlivingPassDetail_UnitID_CoreUnit_UnitID" Association="Self.FK_OutlivingPassDetail_UnitID_CoreUnit_UnitID">
+            <End Role="CoreUnit" EntitySet="CoreUnit" />
+            <End Role="OutlivingPassDetail" EntitySet="OutlivingPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OutlivingPassDetail_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_OutlivingPassDetail_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="OutlivingPassDetail" EntitySet="OutlivingPassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PassDocument_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_PassDocument_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="PassDocument" EntitySet="PassDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PassDocument_NSGPassID_NSGPass_NSGPassID" Association="Self.FK_PassDocument_NSGPassID_NSGPass_NSGPassID">
+            <End Role="NSGPass" EntitySet="NSGPass" />
+            <End Role="PassDocument" EntitySet="PassDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PassDocument_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_PassDocument_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="PassDocument" EntitySet="PassDocument" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiclePassDetail_EntryUserID_CoreUser_CoreUserID" Association="Self.FK_VehiclePassDetail_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="VehiclePassDetail" EntitySet="VehiclePassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiclePassDetail_NSGPassID_NSGPass_NSGPassID" Association="Self.FK_VehiclePassDetail_NSGPassID_NSGPass_NSGPassID">
+            <End Role="NSGPass" EntitySet="NSGPass" />
+            <End Role="VehiclePassDetail" EntitySet="VehiclePassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiclePassDetail_RankID_CoreRank_RankID" Association="Self.FK_VehiclePassDetail_RankID_CoreRank_RankID">
+            <End Role="CoreRank" EntitySet="CoreRank" />
+            <End Role="VehiclePassDetail" EntitySet="VehiclePassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiclePassDetail_UnitID_CoreUnit_UnitID" Association="Self.FK_VehiclePassDetail_UnitID_CoreUnit_UnitID">
+            <End Role="CoreUnit" EntitySet="CoreUnit" />
+            <End Role="VehiclePassDetail" EntitySet="VehiclePassDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiclePassDetail_UpdateUserID_CoreUser_CoreUserID" Association="Self.FK_VehiclePassDetail_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUser" />
+            <End Role="VehiclePassDetail" EntitySet="VehiclePassDetail" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NSGPassManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="NSGPassManagementEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CivilianPassDetails" EntityType="NSGPassManagementModel.CivilianPassDetail" />
+          <EntitySet Name="CoreCities" EntityType="NSGPassManagementModel.CoreCity" />
+          <EntitySet Name="CoreIdentityTypes" EntityType="NSGPassManagementModel.CoreIdentityType" />
+          <EntitySet Name="CorePassTypes" EntityType="NSGPassManagementModel.CorePassType" />
+          <EntitySet Name="CoreQuarterTypes" EntityType="NSGPassManagementModel.CoreQuarterType" />
+          <EntitySet Name="CoreRanks" EntityType="NSGPassManagementModel.CoreRank" />
+          <EntitySet Name="CoreRelationships" EntityType="NSGPassManagementModel.CoreRelationship" />
+          <EntitySet Name="CoreStates" EntityType="NSGPassManagementModel.CoreState" />
+          <EntitySet Name="CoreUnits" EntityType="NSGPassManagementModel.CoreUnit" />
+          <EntitySet Name="CoreUsers" EntityType="NSGPassManagementModel.CoreUser" />
+          <EntitySet Name="ErrorLogs" EntityType="NSGPassManagementModel.ErrorLog" />
+          <EntitySet Name="GuestDependantPassDetails" EntityType="NSGPassManagementModel.GuestDependantPassDetail" />
+          <EntitySet Name="NSGEmployees" EntityType="NSGPassManagementModel.NSGEmployee" />
+          <EntitySet Name="NSGPasses" EntityType="NSGPassManagementModel.NSGPass" />
+          <EntitySet Name="OutlivingPassDetails" EntityType="NSGPassManagementModel.OutlivingPassDetail" />
+          <AssociationSet Name="FK_CivilianPassDetail_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CivilianPassDetail_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CivilianPassDetail" EntitySet="CivilianPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CivilianPassDetail_NSGPassID_NSGPass_NSGPassID" Association="NSGPassManagementModel.FK_CivilianPassDetail_NSGPassID_NSGPass_NSGPassID">
+            <End Role="NSGPass" EntitySet="NSGPasses" />
+            <End Role="CivilianPassDetail" EntitySet="CivilianPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CivilianPassDetail_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CivilianPassDetail_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CivilianPassDetail" EntitySet="CivilianPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreCity_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreCity_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreCity" EntitySet="CoreCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreCity_StateID_CoreState_StateID" Association="NSGPassManagementModel.FK_CoreCity_StateID_CoreState_StateID">
+            <End Role="CoreState" EntitySet="CoreStates" />
+            <End Role="CoreCity" EntitySet="CoreCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreCity_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreCity_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreCity" EntitySet="CoreCities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGPass_CityID_CoreCity_CityID" Association="NSGPassManagementModel.FK_NSGPass_CityID_CoreCity_CityID">
+            <End Role="CoreCity" EntitySet="CoreCities" />
+            <End Role="NSGPass" EntitySet="NSGPasses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IdentityType_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_IdentityType_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreIdentityType" EntitySet="CoreIdentityTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IdentityType_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_IdentityType_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreIdentityType" EntitySet="CoreIdentityTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CorePassType_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CorePassType_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CorePassType" EntitySet="CorePassTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CorePassType_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CorePassType_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CorePassType" EntitySet="CorePassTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGPass_PassTypeID_CorePassType_PassTypeID" Association="NSGPassManagementModel.FK_NSGPass_PassTypeID_CorePassType_PassTypeID">
+            <End Role="CorePassType" EntitySet="CorePassTypes" />
+            <End Role="NSGPass" EntitySet="NSGPasses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreQuarterType_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreQuarterType_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreQuarterType" EntitySet="CoreQuarterTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreQuarterType_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreQuarterType_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreQuarterType" EntitySet="CoreQuarterTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGEmployee_QuarterTypeID_CoreQuarterType_QuarterTypeID" Association="NSGPassManagementModel.FK_NSGEmployee_QuarterTypeID_CoreQuarterType_QuarterTypeID">
+            <End Role="CoreQuarterType" EntitySet="CoreQuarterTypes" />
+            <End Role="NSGEmployee" EntitySet="NSGEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreRank_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreRank_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreRank" EntitySet="CoreRanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreRank_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreRank_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreRank" EntitySet="CoreRanks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_RankID_CoreRank_RankID" Association="NSGPassManagementModel.FK_GuestDependantPassDetail_RankID_CoreRank_RankID">
+            <End Role="CoreRank" EntitySet="CoreRanks" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGEmployee_RankID_CoreRank_RankID" Association="NSGPassManagementModel.FK_NSGEmployee_RankID_CoreRank_RankID">
+            <End Role="CoreRank" EntitySet="CoreRanks" />
+            <End Role="NSGEmployee" EntitySet="NSGEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OutlivingPassDetail_RankID_CoreRank_RankID" Association="NSGPassManagementModel.FK_OutlivingPassDetail_RankID_CoreRank_RankID">
+            <End Role="CoreRank" EntitySet="CoreRanks" />
+            <End Role="OutlivingPassDetail" EntitySet="OutlivingPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreRelationship_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreRelationship_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreRelationship" EntitySet="CoreRelationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreRelationship_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreRelationship_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreRelationship" EntitySet="CoreRelationships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_RelationshipID_CoreRelationship_RelationshipID" Association="NSGPassManagementModel.FK_GuestDependantPassDetail_RelationshipID_CoreRelationship_RelationshipID">
+            <End Role="CoreRelationship" EntitySet="CoreRelationships" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreState_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreState_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreState" EntitySet="CoreStates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreState_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreState_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreState" EntitySet="CoreStates" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGPass_StateID_CoreState_StateID" Association="NSGPassManagementModel.FK_NSGPass_StateID_CoreState_StateID">
+            <End Role="CoreState" EntitySet="CoreStates" />
+            <End Role="NSGPass" EntitySet="NSGPasses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreUnit_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreUnit_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreUnit" EntitySet="CoreUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CoreUnit_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_CoreUnit_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="CoreUnit" EntitySet="CoreUnits" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_UnitID_CoreUnit_UnitID" Association="NSGPassManagementModel.FK_GuestDependantPassDetail_UnitID_CoreUnit_UnitID">
+            <End Role="CoreUnit" EntitySet="CoreUnits" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGEmployee_UnitID_CoreUnit_UnitID" Association="NSGPassManagementModel.FK_NSGEmployee_UnitID_CoreUnit_UnitID">
+            <End Role="CoreUnit" EntitySet="CoreUnits" />
+            <End Role="NSGEmployee" EntitySet="NSGEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OutlivingPassDetail_UnitID_CoreUnit_UnitID" Association="NSGPassManagementModel.FK_OutlivingPassDetail_UnitID_CoreUnit_UnitID">
+            <End Role="CoreUnit" EntitySet="CoreUnits" />
+            <End Role="OutlivingPassDetail" EntitySet="OutlivingPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_GuestDependantPassDetail_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_GuestDependantPassDetail_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGEmployee_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_NSGEmployee_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="NSGEmployee" EntitySet="NSGEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGEmployee_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_NSGEmployee_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="NSGEmployee" EntitySet="NSGEmployees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGPass_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_NSGPass_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="NSGPass" EntitySet="NSGPasses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NSGPass_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_NSGPass_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="NSGPass" EntitySet="NSGPasses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OutlivingPassDetail_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_OutlivingPassDetail_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="OutlivingPassDetail" EntitySet="OutlivingPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OutlivingPassDetail_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_OutlivingPassDetail_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="OutlivingPassDetail" EntitySet="OutlivingPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GuestDependantPassDetail_NSGPassID_NSGPass_NSGPassID" Association="NSGPassManagementModel.FK_GuestDependantPassDetail_NSGPassID_NSGPass_NSGPassID">
+            <End Role="NSGPass" EntitySet="NSGPasses" />
+            <End Role="GuestDependantPassDetail" EntitySet="GuestDependantPassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OutlivingPassDetail_NSGPassID_NSGPass_NSGPassID" Association="NSGPassManagementModel.FK_OutlivingPassDetail_NSGPassID_NSGPass_NSGPassID">
+            <End Role="NSGPass" EntitySet="NSGPasses" />
+            <End Role="OutlivingPassDetail" EntitySet="OutlivingPassDetails" />
+          </AssociationSet>
+          <EntitySet Name="CivilianPassDetailViews" EntityType="NSGPassManagementModel.CivilianPassDetailView" />
+          <EntitySet Name="GuestDependentPassDetailViews" EntityType="NSGPassManagementModel.GuestDependentPassDetailView" />
+          <EntitySet Name="CivilianVehiclePassViews" EntityType="NSGPassManagementModel.CivilianVehiclePassView" />
+          <EntitySet Name="NSGPersonalVehiclePassViews" EntityType="NSGPassManagementModel.NSGPersonalVehiclePassView" />
+          <EntitySet Name="OutlivingPassViews" EntityType="NSGPassManagementModel.OutlivingPassView" />
+          <EntitySet Name="VehiclePassDetails" EntityType="NSGPassManagementModel.VehiclePassDetail" />
+          <AssociationSet Name="FK_VehiclePassDetail_RankID_CoreRank_RankID" Association="NSGPassManagementModel.FK_VehiclePassDetail_RankID_CoreRank_RankID">
+            <End Role="CoreRank" EntitySet="CoreRanks" />
+            <End Role="VehiclePassDetail" EntitySet="VehiclePassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiclePassDetail_UnitID_CoreUnit_UnitID" Association="NSGPassManagementModel.FK_VehiclePassDetail_UnitID_CoreUnit_UnitID">
+            <End Role="CoreUnit" EntitySet="CoreUnits" />
+            <End Role="VehiclePassDetail" EntitySet="VehiclePassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiclePassDetail_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_VehiclePassDetail_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="VehiclePassDetail" EntitySet="VehiclePassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiclePassDetail_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_VehiclePassDetail_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="VehiclePassDetail" EntitySet="VehiclePassDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VehiclePassDetail_NSGPassID_NSGPass_NSGPassID" Association="NSGPassManagementModel.FK_VehiclePassDetail_NSGPassID_NSGPass_NSGPassID">
+            <End Role="NSGPass" EntitySet="NSGPasses" />
+            <End Role="VehiclePassDetail" EntitySet="VehiclePassDetails" />
+          </AssociationSet>
+          <EntitySet Name="PassDocuments" EntityType="NSGPassManagementModel.PassDocument" />
+          <AssociationSet Name="FK_PassDocument_EntryUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_PassDocument_EntryUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="PassDocument" EntitySet="PassDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PassDocument_UpdateUserID_CoreUser_CoreUserID" Association="NSGPassManagementModel.FK_PassDocument_UpdateUserID_CoreUser_CoreUserID">
+            <End Role="CoreUser" EntitySet="CoreUsers" />
+            <End Role="PassDocument" EntitySet="PassDocuments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PassDocument_NSGPassID_NSGPass_NSGPassID" Association="NSGPassManagementModel.FK_PassDocument_NSGPassID_NSGPass_NSGPassID">
+            <End Role="NSGPass" EntitySet="NSGPasses" />
+            <End Role="PassDocument" EntitySet="PassDocuments" />
+          </AssociationSet>
+          <FunctionImport Name="PassHolderDetailsGet" ReturnType="Collection(NSGPassManagementModel.PassHolderDetailsGet_Result)">
+            <Parameter Name="IssueDate" Mode="In" Type="DateTime" />
+            <Parameter Name="ExpiryDate" Mode="In" Type="DateTime" />
+            <Parameter Name="PassID" Mode="In" Type="Int64" />
+            <Parameter Name="PersonName" Mode="In" Type="String" />
+            <Parameter Name="PassTypeID" Mode="In" Type="Int32" />
+            <Parameter Name="VehicleNumber" Mode="In" Type="String" />
+          </FunctionImport>
+          </EntityContainer>
+        <EntityType Name="CivilianPassDetail">
+          <Key>
+            <PropertyRef Name="CivilianPassDetailID" />
+          </Key>
+          <Property Name="CivilianPassDetailID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NSGPassID" Type="Int64" Nullable="false" />
+          <Property Name="Designation" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ContractorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_CivilianPassDetail_EntryUserID_CoreUser_CoreUserID" FromRole="CivilianPassDetail" ToRole="CoreUser" />
+          <NavigationProperty Name="NSGPass" Relationship="NSGPassManagementModel.FK_CivilianPassDetail_NSGPassID_NSGPass_NSGPassID" FromRole="CivilianPassDetail" ToRole="NSGPass" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_CivilianPassDetail_UpdateUserID_CoreUser_CoreUserID" FromRole="CivilianPassDetail" ToRole="CoreUser" />
+        </EntityType>
+        <EntityType Name="CoreCity">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateID" Type="Int32" Nullable="false" />
+          <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_CoreCity_EntryUserID_CoreUser_CoreUserID" FromRole="CoreCity" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreState" Relationship="NSGPassManagementModel.FK_CoreCity_StateID_CoreState_StateID" FromRole="CoreCity" ToRole="CoreState" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_CoreCity_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreCity" ToRole="CoreUser" />
+          <NavigationProperty Name="NSGPasses" Relationship="NSGPassManagementModel.FK_NSGPass_CityID_CoreCity_CityID" FromRole="CoreCity" ToRole="NSGPass" />
+        </EntityType>
+        <EntityType Name="CoreIdentityType">
+          <Key>
+            <PropertyRef Name="IdentityTypeID" />
+          </Key>
+          <Property Name="IdentityTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdentityType" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_IdentityType_EntryUserID_CoreUser_CoreUserID" FromRole="CoreIdentityType" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_IdentityType_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreIdentityType" ToRole="CoreUser" />
+        </EntityType>
+        <EntityType Name="CorePassType">
+          <Key>
+            <PropertyRef Name="PassTypeID" />
+          </Key>
+          <Property Name="PassTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PassTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PassColor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_CorePassType_EntryUserID_CoreUser_CoreUserID" FromRole="CorePassType" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_CorePassType_UpdateUserID_CoreUser_CoreUserID" FromRole="CorePassType" ToRole="CoreUser" />
+          <NavigationProperty Name="NSGPasses" Relationship="NSGPassManagementModel.FK_NSGPass_PassTypeID_CorePassType_PassTypeID" FromRole="CorePassType" ToRole="NSGPass" />
+        </EntityType>
+        <EntityType Name="CoreQuarterType">
+          <Key>
+            <PropertyRef Name="QuarterTypeID" />
+          </Key>
+          <Property Name="QuarterTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuarterTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MaxQuarterNumber" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_CoreQuarterType_EntryUserID_CoreUser_CoreUserID" FromRole="CoreQuarterType" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_CoreQuarterType_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreQuarterType" ToRole="CoreUser" />
+          <NavigationProperty Name="NSGEmployees" Relationship="NSGPassManagementModel.FK_NSGEmployee_QuarterTypeID_CoreQuarterType_QuarterTypeID" FromRole="CoreQuarterType" ToRole="NSGEmployee" />
+        </EntityType>
+        <EntityType Name="CoreRank">
+          <Key>
+            <PropertyRef Name="RankID" />
+          </Key>
+          <Property Name="RankID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RankName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_CoreRank_EntryUserID_CoreUser_CoreUserID" FromRole="CoreRank" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_CoreRank_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreRank" ToRole="CoreUser" />
+          <NavigationProperty Name="GuestDependantPassDetails" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_RankID_CoreRank_RankID" FromRole="CoreRank" ToRole="GuestDependantPassDetail" />
+          <NavigationProperty Name="NSGEmployees" Relationship="NSGPassManagementModel.FK_NSGEmployee_RankID_CoreRank_RankID" FromRole="CoreRank" ToRole="NSGEmployee" />
+          <NavigationProperty Name="OutlivingPassDetails" Relationship="NSGPassManagementModel.FK_OutlivingPassDetail_RankID_CoreRank_RankID" FromRole="CoreRank" ToRole="OutlivingPassDetail" />
+          <NavigationProperty Name="VehiclePassDetails" Relationship="NSGPassManagementModel.FK_VehiclePassDetail_RankID_CoreRank_RankID" FromRole="CoreRank" ToRole="VehiclePassDetail" />
+        </EntityType>
+        <EntityType Name="CoreRelationship">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Relationship" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_CoreRelationship_EntryUserID_CoreUser_CoreUserID" FromRole="CoreRelationship" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_CoreRelationship_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreRelationship" ToRole="CoreUser" />
+          <NavigationProperty Name="GuestDependantPassDetails" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_RelationshipID_CoreRelationship_RelationshipID" FromRole="CoreRelationship" ToRole="GuestDependantPassDetail" />
+        </EntityType>
+        <EntityType Name="CoreState">
+          <Key>
+            <PropertyRef Name="StateID" />
+          </Key>
+          <Property Name="StateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreCities" Relationship="NSGPassManagementModel.FK_CoreCity_StateID_CoreState_StateID" FromRole="CoreState" ToRole="CoreCity" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_CoreState_EntryUserID_CoreUser_CoreUserID" FromRole="CoreState" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_CoreState_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreState" ToRole="CoreUser" />
+          <NavigationProperty Name="NSGPasses" Relationship="NSGPassManagementModel.FK_NSGPass_StateID_CoreState_StateID" FromRole="CoreState" ToRole="NSGPass" />
+        </EntityType>
+        <EntityType Name="CoreUnit">
+          <Key>
+            <PropertyRef Name="UnitID" />
+          </Key>
+          <Property Name="UnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_CoreUnit_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUnit" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_CoreUnit_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUnit" ToRole="CoreUser" />
+          <NavigationProperty Name="GuestDependantPassDetails" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_UnitID_CoreUnit_UnitID" FromRole="CoreUnit" ToRole="GuestDependantPassDetail" />
+          <NavigationProperty Name="NSGEmployees" Relationship="NSGPassManagementModel.FK_NSGEmployee_UnitID_CoreUnit_UnitID" FromRole="CoreUnit" ToRole="NSGEmployee" />
+          <NavigationProperty Name="OutlivingPassDetails" Relationship="NSGPassManagementModel.FK_OutlivingPassDetail_UnitID_CoreUnit_UnitID" FromRole="CoreUnit" ToRole="OutlivingPassDetail" />
+          <NavigationProperty Name="VehiclePassDetails" Relationship="NSGPassManagementModel.FK_VehiclePassDetail_UnitID_CoreUnit_UnitID" FromRole="CoreUnit" ToRole="VehiclePassDetail" />
+        </EntityType>
+        <EntityType Name="CoreUser">
+          <Key>
+            <PropertyRef Name="CoreUserID" />
+          </Key>
+          <Property Name="CoreUserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UserPassword" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CivilianPassDetails" Relationship="NSGPassManagementModel.FK_CivilianPassDetail_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CivilianPassDetail" />
+          <NavigationProperty Name="CivilianPassDetails1" Relationship="NSGPassManagementModel.FK_CivilianPassDetail_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CivilianPassDetail" />
+          <NavigationProperty Name="CoreCities" Relationship="NSGPassManagementModel.FK_CoreCity_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreCity" />
+          <NavigationProperty Name="CoreCities1" Relationship="NSGPassManagementModel.FK_CoreCity_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreCity" />
+          <NavigationProperty Name="CoreIdentityTypes" Relationship="NSGPassManagementModel.FK_IdentityType_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreIdentityType" />
+          <NavigationProperty Name="CoreIdentityTypes1" Relationship="NSGPassManagementModel.FK_IdentityType_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreIdentityType" />
+          <NavigationProperty Name="CorePassTypes" Relationship="NSGPassManagementModel.FK_CorePassType_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CorePassType" />
+          <NavigationProperty Name="CorePassTypes1" Relationship="NSGPassManagementModel.FK_CorePassType_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CorePassType" />
+          <NavigationProperty Name="CoreQuarterTypes" Relationship="NSGPassManagementModel.FK_CoreQuarterType_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreQuarterType" />
+          <NavigationProperty Name="CoreQuarterTypes1" Relationship="NSGPassManagementModel.FK_CoreQuarterType_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreQuarterType" />
+          <NavigationProperty Name="CoreRanks" Relationship="NSGPassManagementModel.FK_CoreRank_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreRank" />
+          <NavigationProperty Name="CoreRanks1" Relationship="NSGPassManagementModel.FK_CoreRank_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreRank" />
+          <NavigationProperty Name="CoreRelationships" Relationship="NSGPassManagementModel.FK_CoreRelationship_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreRelationship" />
+          <NavigationProperty Name="CoreRelationships1" Relationship="NSGPassManagementModel.FK_CoreRelationship_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreRelationship" />
+          <NavigationProperty Name="CoreStates" Relationship="NSGPassManagementModel.FK_CoreState_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreState" />
+          <NavigationProperty Name="CoreStates1" Relationship="NSGPassManagementModel.FK_CoreState_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreState" />
+          <NavigationProperty Name="CoreUnits" Relationship="NSGPassManagementModel.FK_CoreUnit_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreUnit" />
+          <NavigationProperty Name="CoreUnits1" Relationship="NSGPassManagementModel.FK_CoreUnit_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="CoreUnit" />
+          <NavigationProperty Name="GuestDependantPassDetails" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="GuestDependantPassDetail" />
+          <NavigationProperty Name="GuestDependantPassDetails1" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="GuestDependantPassDetail" />
+          <NavigationProperty Name="NSGEmployees" Relationship="NSGPassManagementModel.FK_NSGEmployee_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="NSGEmployee" />
+          <NavigationProperty Name="NSGEmployees1" Relationship="NSGPassManagementModel.FK_NSGEmployee_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="NSGEmployee" />
+          <NavigationProperty Name="NSGPasses" Relationship="NSGPassManagementModel.FK_NSGPass_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="NSGPass" />
+          <NavigationProperty Name="NSGPasses1" Relationship="NSGPassManagementModel.FK_NSGPass_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="NSGPass" />
+          <NavigationProperty Name="OutlivingPassDetails" Relationship="NSGPassManagementModel.FK_OutlivingPassDetail_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="OutlivingPassDetail" />
+          <NavigationProperty Name="OutlivingPassDetails1" Relationship="NSGPassManagementModel.FK_OutlivingPassDetail_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="OutlivingPassDetail" />
+          <NavigationProperty Name="VehiclePassDetails" Relationship="NSGPassManagementModel.FK_VehiclePassDetail_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="VehiclePassDetail" />
+          <NavigationProperty Name="VehiclePassDetails1" Relationship="NSGPassManagementModel.FK_VehiclePassDetail_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="VehiclePassDetail" />
+          <NavigationProperty Name="PassDocuments" Relationship="NSGPassManagementModel.FK_PassDocument_EntryUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="PassDocument" />
+          <NavigationProperty Name="PassDocuments1" Relationship="NSGPassManagementModel.FK_PassDocument_UpdateUserID_CoreUser_CoreUserID" FromRole="CoreUser" ToRole="PassDocument" />
+          </EntityType>
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="ErrorLogID" />
+          </Key>
+          <Property Name="ErrorLogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SPName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ErrorNumber" Type="Int32" />
+          <Property Name="ErrorSeverity" Type="Int32" />
+          <Property Name="ErrorState" Type="Int32" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ErrorTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="GuestDependantPassDetail">
+          <Key>
+            <PropertyRef Name="GuestDependantPassDetailID" />
+          </Key>
+          <Property Name="GuestDependantPassDetailID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NSGPassID" Type="Int64" Nullable="false" />
+          <Property Name="IdentificationMark" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Height" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="RelativeOf" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NSGEmployeeCode" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="RankID" Type="Int32" />
+          <Property Name="UnitID" Type="Int32" />
+          <Property Name="RelationshipID" Type="Int32" Nullable="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreRank" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_RankID_CoreRank_RankID" FromRole="GuestDependantPassDetail" ToRole="CoreRank" />
+          <NavigationProperty Name="CoreRelationship" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_RelationshipID_CoreRelationship_RelationshipID" FromRole="GuestDependantPassDetail" ToRole="CoreRelationship" />
+          <NavigationProperty Name="CoreUnit" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_UnitID_CoreUnit_UnitID" FromRole="GuestDependantPassDetail" ToRole="CoreUnit" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_EntryUserID_CoreUser_CoreUserID" FromRole="GuestDependantPassDetail" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_UpdateUserID_CoreUser_CoreUserID" FromRole="GuestDependantPassDetail" ToRole="CoreUser" />
+          <NavigationProperty Name="NSGPass" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_NSGPassID_NSGPass_NSGPassID" FromRole="GuestDependantPassDetail" ToRole="NSGPass" />
+        </EntityType>
+        <EntityType Name="NSGEmployee">
+          <Key>
+            <PropertyRef Name="NSGEmployeeID" />
+          </Key>
+          <Property Name="NSGEmployeeID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NSGEmployeeCode" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="RankID" Type="Int32" />
+          <Property Name="UnitID" Type="Int32" />
+          <Property Name="QuarterTypeID" Type="Int32" />
+          <Property Name="QuarterNumber" Type="Int32" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreQuarterType" Relationship="NSGPassManagementModel.FK_NSGEmployee_QuarterTypeID_CoreQuarterType_QuarterTypeID" FromRole="NSGEmployee" ToRole="CoreQuarterType" />
+          <NavigationProperty Name="CoreRank" Relationship="NSGPassManagementModel.FK_NSGEmployee_RankID_CoreRank_RankID" FromRole="NSGEmployee" ToRole="CoreRank" />
+          <NavigationProperty Name="CoreUnit" Relationship="NSGPassManagementModel.FK_NSGEmployee_UnitID_CoreUnit_UnitID" FromRole="NSGEmployee" ToRole="CoreUnit" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_NSGEmployee_EntryUserID_CoreUser_CoreUserID" FromRole="NSGEmployee" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_NSGEmployee_UpdateUserID_CoreUser_CoreUserID" FromRole="NSGEmployee" ToRole="CoreUser" />
+        </EntityType>
+        <EntityType Name="NSGPass">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+          </Key>
+          <Property Name="NSGPassID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MachineID" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="PassTypeID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNo" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="GuardianName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="PassHolderAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CityID" Type="Int64" />
+          <Property Name="StateID" Type="Int32" />
+          <Property Name="PassHolderPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CivilianPassDetails" Relationship="NSGPassManagementModel.FK_CivilianPassDetail_NSGPassID_NSGPass_NSGPassID" FromRole="NSGPass" ToRole="CivilianPassDetail" />
+          <NavigationProperty Name="CoreCity" Relationship="NSGPassManagementModel.FK_NSGPass_CityID_CoreCity_CityID" FromRole="NSGPass" ToRole="CoreCity" />
+          <NavigationProperty Name="CorePassType" Relationship="NSGPassManagementModel.FK_NSGPass_PassTypeID_CorePassType_PassTypeID" FromRole="NSGPass" ToRole="CorePassType" />
+          <NavigationProperty Name="CoreState" Relationship="NSGPassManagementModel.FK_NSGPass_StateID_CoreState_StateID" FromRole="NSGPass" ToRole="CoreState" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_NSGPass_EntryUserID_CoreUser_CoreUserID" FromRole="NSGPass" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_NSGPass_UpdateUserID_CoreUser_CoreUserID" FromRole="NSGPass" ToRole="CoreUser" />
+          <NavigationProperty Name="GuestDependantPassDetails" Relationship="NSGPassManagementModel.FK_GuestDependantPassDetail_NSGPassID_NSGPass_NSGPassID" FromRole="NSGPass" ToRole="GuestDependantPassDetail" />
+          <NavigationProperty Name="OutlivingPassDetails" Relationship="NSGPassManagementModel.FK_OutlivingPassDetail_NSGPassID_NSGPass_NSGPassID" FromRole="NSGPass" ToRole="OutlivingPassDetail" />
+          <NavigationProperty Name="VehiclePassDetails" Relationship="NSGPassManagementModel.FK_VehiclePassDetail_NSGPassID_NSGPass_NSGPassID" FromRole="NSGPass" ToRole="VehiclePassDetail" />
+          <NavigationProperty Name="PassDocuments" Relationship="NSGPassManagementModel.FK_PassDocument_NSGPassID_NSGPass_NSGPassID" FromRole="NSGPass" ToRole="PassDocument" />
+        </EntityType>
+        <EntityType Name="OutlivingPassDetail">
+          <Key>
+            <PropertyRef Name="OutlivingPassDetailID" />
+          </Key>
+          <Property Name="OutlivingPassDetailID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NSGPassID" Type="Int64" Nullable="false" />
+          <Property Name="IdentificationMark" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BloodGroup" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NSGEmployeeCode" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="RankID" Type="Int32" />
+          <Property Name="UnitID" Type="Int32" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreRank" Relationship="NSGPassManagementModel.FK_OutlivingPassDetail_RankID_CoreRank_RankID" FromRole="OutlivingPassDetail" ToRole="CoreRank" />
+          <NavigationProperty Name="CoreUnit" Relationship="NSGPassManagementModel.FK_OutlivingPassDetail_UnitID_CoreUnit_UnitID" FromRole="OutlivingPassDetail" ToRole="CoreUnit" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_OutlivingPassDetail_EntryUserID_CoreUser_CoreUserID" FromRole="OutlivingPassDetail" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_OutlivingPassDetail_UpdateUserID_CoreUser_CoreUserID" FromRole="OutlivingPassDetail" ToRole="CoreUser" />
+          <NavigationProperty Name="NSGPass" Relationship="NSGPassManagementModel.FK_OutlivingPassDetail_NSGPassID_NSGPass_NSGPassID" FromRole="OutlivingPassDetail" ToRole="NSGPass" />
+        </EntityType>
+        <Association Name="FK_CivilianPassDetail_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.CivilianPassDetail" Role="CivilianPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CivilianPassDetail">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CivilianPassDetail_NSGPassID_NSGPass_NSGPassID">
+          <End Type="NSGPassManagementModel.NSGPass" Role="NSGPass" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.CivilianPassDetail" Role="CivilianPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NSGPass">
+              <PropertyRef Name="NSGPassID" />
+            </Principal>
+            <Dependent Role="CivilianPassDetail">
+              <PropertyRef Name="NSGPassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CivilianPassDetail_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.CivilianPassDetail" Role="CivilianPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CivilianPassDetail">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreCity_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.CoreCity" Role="CoreCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreCity">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreCity_StateID_CoreState_StateID">
+          <End Type="NSGPassManagementModel.CoreState" Role="CoreState" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.CoreCity" Role="CoreCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreState">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="CoreCity">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreCity_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.CoreCity" Role="CoreCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreCity">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGPass_CityID_CoreCity_CityID">
+          <End Type="NSGPassManagementModel.CoreCity" Role="CoreCity" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.NSGPass" Role="NSGPass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreCity">
+              <PropertyRef Name="CityID" />
+            </Principal>
+            <Dependent Role="NSGPass">
+              <PropertyRef Name="CityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IdentityType_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.CoreIdentityType" Role="CoreIdentityType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreIdentityType">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IdentityType_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.CoreIdentityType" Role="CoreIdentityType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreIdentityType">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CorePassType_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.CorePassType" Role="CorePassType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CorePassType">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CorePassType_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.CorePassType" Role="CorePassType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CorePassType">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGPass_PassTypeID_CorePassType_PassTypeID">
+          <End Type="NSGPassManagementModel.CorePassType" Role="CorePassType" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.NSGPass" Role="NSGPass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CorePassType">
+              <PropertyRef Name="PassTypeID" />
+            </Principal>
+            <Dependent Role="NSGPass">
+              <PropertyRef Name="PassTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreQuarterType_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.CoreQuarterType" Role="CoreQuarterType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreQuarterType">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreQuarterType_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.CoreQuarterType" Role="CoreQuarterType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreQuarterType">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGEmployee_QuarterTypeID_CoreQuarterType_QuarterTypeID">
+          <End Type="NSGPassManagementModel.CoreQuarterType" Role="CoreQuarterType" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.NSGEmployee" Role="NSGEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreQuarterType">
+              <PropertyRef Name="QuarterTypeID" />
+            </Principal>
+            <Dependent Role="NSGEmployee">
+              <PropertyRef Name="QuarterTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreRank_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.CoreRank" Role="CoreRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreRank">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreRank_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.CoreRank" Role="CoreRank" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreRank">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_RankID_CoreRank_RankID">
+          <End Type="NSGPassManagementModel.CoreRank" Role="CoreRank" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.GuestDependantPassDetail" Role="GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreRank">
+              <PropertyRef Name="RankID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="RankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGEmployee_RankID_CoreRank_RankID">
+          <End Type="NSGPassManagementModel.CoreRank" Role="CoreRank" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.NSGEmployee" Role="NSGEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreRank">
+              <PropertyRef Name="RankID" />
+            </Principal>
+            <Dependent Role="NSGEmployee">
+              <PropertyRef Name="RankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OutlivingPassDetail_RankID_CoreRank_RankID">
+          <End Type="NSGPassManagementModel.CoreRank" Role="CoreRank" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.OutlivingPassDetail" Role="OutlivingPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreRank">
+              <PropertyRef Name="RankID" />
+            </Principal>
+            <Dependent Role="OutlivingPassDetail">
+              <PropertyRef Name="RankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreRelationship_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.CoreRelationship" Role="CoreRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreRelationship">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreRelationship_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.CoreRelationship" Role="CoreRelationship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreRelationship">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_RelationshipID_CoreRelationship_RelationshipID">
+          <End Type="NSGPassManagementModel.CoreRelationship" Role="CoreRelationship" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.GuestDependantPassDetail" Role="GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreRelationship">
+              <PropertyRef Name="RelationshipID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="RelationshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreState_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.CoreState" Role="CoreState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreState">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreState_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.CoreState" Role="CoreState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreState">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGPass_StateID_CoreState_StateID">
+          <End Type="NSGPassManagementModel.CoreState" Role="CoreState" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.NSGPass" Role="NSGPass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreState">
+              <PropertyRef Name="StateID" />
+            </Principal>
+            <Dependent Role="NSGPass">
+              <PropertyRef Name="StateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreUnit_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.CoreUnit" Role="CoreUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreUnit">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CoreUnit_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.CoreUnit" Role="CoreUnit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="CoreUnit">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_UnitID_CoreUnit_UnitID">
+          <End Type="NSGPassManagementModel.CoreUnit" Role="CoreUnit" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.GuestDependantPassDetail" Role="GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGEmployee_UnitID_CoreUnit_UnitID">
+          <End Type="NSGPassManagementModel.CoreUnit" Role="CoreUnit" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.NSGEmployee" Role="NSGEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="NSGEmployee">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OutlivingPassDetail_UnitID_CoreUnit_UnitID">
+          <End Type="NSGPassManagementModel.CoreUnit" Role="CoreUnit" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.OutlivingPassDetail" Role="OutlivingPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="OutlivingPassDetail">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.GuestDependantPassDetail" Role="GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.GuestDependantPassDetail" Role="GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGEmployee_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.NSGEmployee" Role="NSGEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="NSGEmployee">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGEmployee_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.NSGEmployee" Role="NSGEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="NSGEmployee">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGPass_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.NSGPass" Role="NSGPass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="NSGPass">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NSGPass_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.NSGPass" Role="NSGPass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="NSGPass">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OutlivingPassDetail_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.OutlivingPassDetail" Role="OutlivingPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="OutlivingPassDetail">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OutlivingPassDetail_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.OutlivingPassDetail" Role="OutlivingPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="OutlivingPassDetail">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GuestDependantPassDetail_NSGPassID_NSGPass_NSGPassID">
+          <End Type="NSGPassManagementModel.NSGPass" Role="NSGPass" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.GuestDependantPassDetail" Role="GuestDependantPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NSGPass">
+              <PropertyRef Name="NSGPassID" />
+            </Principal>
+            <Dependent Role="GuestDependantPassDetail">
+              <PropertyRef Name="NSGPassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OutlivingPassDetail_NSGPassID_NSGPass_NSGPassID">
+          <End Type="NSGPassManagementModel.NSGPass" Role="NSGPass" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.OutlivingPassDetail" Role="OutlivingPassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NSGPass">
+              <PropertyRef Name="NSGPassID" />
+            </Principal>
+            <Dependent Role="OutlivingPassDetail">
+              <PropertyRef Name="NSGPassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="CivilianPassDetailView">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+            <PropertyRef Name="IssueDate" />
+            <PropertyRef Name="ContractorName" />
+            <PropertyRef Name="Designation" />
+          </Key>
+          <Property Name="NSGPassID" Type="Int64" Nullable="false" />
+          <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="FullName" Type="String" MaxLength="501" FixedLength="false" Unicode="false" />
+          <Property Name="GuardianName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="ContractorName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PassHolderAddress" Type="String" MaxLength="702" FixedLength="false" Unicode="true" />
+          <Property Name="PassHolderPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="GuestDependentPassDetailView">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+            <PropertyRef Name="IssueDate" />
+            <PropertyRef Name="IdentificationMark" />
+            <PropertyRef Name="RelativeOf" />
+            <PropertyRef Name="NSGEmployeeCode" />
+          </Key>
+          <Property Name="NSGPassID" Type="Int64" Nullable="false" />
+          <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="FullName" Type="String" MaxLength="501" FixedLength="false" Unicode="false" />
+          <Property Name="Relationship" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="IdentificationMark" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RelativeOf" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NSGEmployeeCode" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="RankName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UnitName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PassHolderPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CivilianVehiclePassView">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+            <PropertyRef Name="IssueDate" />
+            <PropertyRef Name="RegistrationNumber" />
+            <PropertyRef Name="VehicleType" />
+            <PropertyRef Name="VehicleMake" />
+          </Key>
+          <Property Name="NSGPassID" Type="Int64" Nullable="false" />
+          <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="FullName" Type="String" MaxLength="501" FixedLength="false" Unicode="false" />
+          <Property Name="RegistrationNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleMake" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Designation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PassHolderPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="NSGPersonalVehiclePassView">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+            <PropertyRef Name="IssueDate" />
+            <PropertyRef Name="RegistrationNumber" />
+            <PropertyRef Name="VehicleType" />
+            <PropertyRef Name="VehicleMake" />
+          </Key>
+          <Property Name="NSGPassID" Type="Int64" Nullable="false" />
+          <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="FullName" Type="String" MaxLength="501" FixedLength="false" Unicode="false" />
+          <Property Name="NSGEmployeeCode" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="RankName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UnitName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RegistrationNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleType" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleMake" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PassHolderPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="OutlivingPassView">
+          <Key>
+            <PropertyRef Name="NSGPassID" />
+            <PropertyRef Name="IssueDate" />
+            <PropertyRef Name="NSGEmployeeCode" />
+            <PropertyRef Name="BloodGroup" />
+            <PropertyRef Name="IdentificationMark" />
+          </Key>
+          <Property Name="NSGPassID" Type="Int64" Nullable="false" />
+          <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="FullName" Type="String" MaxLength="501" FixedLength="false" Unicode="false" />
+          <Property Name="NSGEmployeeCode" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="RankName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UnitName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="BloodGroup" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="IdentificationMark" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PassHolderAddress" Type="String" MaxLength="702" FixedLength="false" Unicode="true" />
+          <Property Name="PassHolderPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="VehiclePassDetail">
+          <Key>
+            <PropertyRef Name="VehiclePassDetailID" />
+          </Key>
+          <Property Name="VehiclePassDetailID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NSGPassID" Type="Int64" Nullable="false" />
+          <Property Name="RegistrationNumber" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VehicleMake" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NSGEmployeeCode" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="RankID" Type="Int32" />
+          <Property Name="UnitID" Type="Int32" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="Designation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CoreRank" Relationship="NSGPassManagementModel.FK_VehiclePassDetail_RankID_CoreRank_RankID" FromRole="VehiclePassDetail" ToRole="CoreRank" />
+          <NavigationProperty Name="CoreUnit" Relationship="NSGPassManagementModel.FK_VehiclePassDetail_UnitID_CoreUnit_UnitID" FromRole="VehiclePassDetail" ToRole="CoreUnit" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_VehiclePassDetail_EntryUserID_CoreUser_CoreUserID" FromRole="VehiclePassDetail" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_VehiclePassDetail_UpdateUserID_CoreUser_CoreUserID" FromRole="VehiclePassDetail" ToRole="CoreUser" />
+          <NavigationProperty Name="NSGPass" Relationship="NSGPassManagementModel.FK_VehiclePassDetail_NSGPassID_NSGPass_NSGPassID" FromRole="VehiclePassDetail" ToRole="NSGPass" />
+        </EntityType>
+        <Association Name="FK_VehiclePassDetail_RankID_CoreRank_RankID">
+          <End Type="NSGPassManagementModel.CoreRank" Role="CoreRank" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.VehiclePassDetail" Role="VehiclePassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreRank">
+              <PropertyRef Name="RankID" />
+            </Principal>
+            <Dependent Role="VehiclePassDetail">
+              <PropertyRef Name="RankID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VehiclePassDetail_UnitID_CoreUnit_UnitID">
+          <End Type="NSGPassManagementModel.CoreUnit" Role="CoreUnit" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.VehiclePassDetail" Role="VehiclePassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUnit">
+              <PropertyRef Name="UnitID" />
+            </Principal>
+            <Dependent Role="VehiclePassDetail">
+              <PropertyRef Name="UnitID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VehiclePassDetail_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.VehiclePassDetail" Role="VehiclePassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="VehiclePassDetail">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VehiclePassDetail_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.VehiclePassDetail" Role="VehiclePassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="VehiclePassDetail">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VehiclePassDetail_NSGPassID_NSGPass_NSGPassID">
+          <End Type="NSGPassManagementModel.NSGPass" Role="NSGPass" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.VehiclePassDetail" Role="VehiclePassDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NSGPass">
+              <PropertyRef Name="NSGPassID" />
+            </Principal>
+            <Dependent Role="VehiclePassDetail">
+              <PropertyRef Name="NSGPassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="PassDocument">
+          <Key>
+            <PropertyRef Name="PassDocumentID" />
+          </Key>
+          <Property Name="PassDocumentID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NSGPassID" Type="Int64" Nullable="false" />
+          <Property Name="DocumentName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentPhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="EntryUserID" Type="Int32" Nullable="false" />
+          <Property Name="EntryDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateUserID" Type="Int32" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="CoreUser" Relationship="NSGPassManagementModel.FK_PassDocument_EntryUserID_CoreUser_CoreUserID" FromRole="PassDocument" ToRole="CoreUser" />
+          <NavigationProperty Name="CoreUser1" Relationship="NSGPassManagementModel.FK_PassDocument_UpdateUserID_CoreUser_CoreUserID" FromRole="PassDocument" ToRole="CoreUser" />
+          <NavigationProperty Name="NSGPass" Relationship="NSGPassManagementModel.FK_PassDocument_NSGPassID_NSGPass_NSGPassID" FromRole="PassDocument" ToRole="NSGPass" />
+        </EntityType>
+        <Association Name="FK_PassDocument_EntryUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.PassDocument" Role="PassDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="PassDocument">
+              <PropertyRef Name="EntryUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PassDocument_UpdateUserID_CoreUser_CoreUserID">
+          <End Type="NSGPassManagementModel.CoreUser" Role="CoreUser" Multiplicity="0..1" />
+          <End Type="NSGPassManagementModel.PassDocument" Role="PassDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CoreUser">
+              <PropertyRef Name="CoreUserID" />
+            </Principal>
+            <Dependent Role="PassDocument">
+              <PropertyRef Name="UpdateUserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PassDocument_NSGPassID_NSGPass_NSGPassID">
+          <End Type="NSGPassManagementModel.NSGPass" Role="NSGPass" Multiplicity="1" />
+          <End Type="NSGPassManagementModel.PassDocument" Role="PassDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NSGPass">
+              <PropertyRef Name="NSGPassID" />
+            </Principal>
+            <Dependent Role="PassDocument">
+              <PropertyRef Name="NSGPassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="PassHolderDetailsGet_Result">
+          <Property Type="Int64" Name="NSGPassID" Nullable="false" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="250" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="250" />
+          <Property Type="DateTime" Name="IssueDate" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="ExpiryDate" Nullable="true" Precision="23" />
+          <Property Type="String" Name="PassTypeName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CityName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="StateName" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="VehicleNumber" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="EntryBy" Nullable="true" MaxLength="501" />
+        </ComplexType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NSGPassManagementModelStoreContainer" CdmEntityContainer="NSGPassManagementEntities">
+          <EntitySetMapping Name="CivilianPassDetails">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CivilianPassDetail">
+              <MappingFragment StoreEntitySet="CivilianPassDetail">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="ContractorName" ColumnName="ContractorName" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+                <ScalarProperty Name="CivilianPassDetailID" ColumnName="CivilianPassDetailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreCities">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CoreCity">
+              <MappingFragment StoreEntitySet="CoreCity">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreIdentityTypes">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CoreIdentityType">
+              <MappingFragment StoreEntitySet="CoreIdentityType">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="IdentityType" ColumnName="IdentityType" />
+                <ScalarProperty Name="IdentityTypeID" ColumnName="IdentityTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CorePassTypes">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CorePassType">
+              <MappingFragment StoreEntitySet="CorePassType">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="PassColor" ColumnName="PassColor" />
+                <ScalarProperty Name="PassTypeName" ColumnName="PassTypeName" />
+                <ScalarProperty Name="PassTypeID" ColumnName="PassTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreQuarterTypes">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CoreQuarterType">
+              <MappingFragment StoreEntitySet="CoreQuarterType">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="MaxQuarterNumber" ColumnName="MaxQuarterNumber" />
+                <ScalarProperty Name="QuarterTypeName" ColumnName="QuarterTypeName" />
+                <ScalarProperty Name="QuarterTypeID" ColumnName="QuarterTypeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreRanks">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CoreRank">
+              <MappingFragment StoreEntitySet="CoreRank">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="RankName" ColumnName="RankName" />
+                <ScalarProperty Name="RankID" ColumnName="RankID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreRelationships">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CoreRelationship">
+              <MappingFragment StoreEntitySet="CoreRelationship">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreStates">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CoreState">
+              <MappingFragment StoreEntitySet="CoreState">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreUnits">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CoreUnit">
+              <MappingFragment StoreEntitySet="CoreUnit">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CoreUsers">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CoreUser">
+              <MappingFragment StoreEntitySet="CoreUser">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="CoreUserID" ColumnName="CoreUserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ErrorLogs">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.ErrorLog">
+              <MappingFragment StoreEntitySet="ErrorLog">
+                <ScalarProperty Name="ErrorTime" ColumnName="ErrorTime" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="ErrorState" ColumnName="ErrorState" />
+                <ScalarProperty Name="ErrorSeverity" ColumnName="ErrorSeverity" />
+                <ScalarProperty Name="ErrorNumber" ColumnName="ErrorNumber" />
+                <ScalarProperty Name="SPName" ColumnName="SPName" />
+                <ScalarProperty Name="ErrorLogID" ColumnName="ErrorLogID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GuestDependantPassDetails">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.GuestDependantPassDetail">
+              <MappingFragment StoreEntitySet="GuestDependantPassDetail">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="RankID" ColumnName="RankID" />
+                <ScalarProperty Name="NSGEmployeeCode" ColumnName="NSGEmployeeCode" />
+                <ScalarProperty Name="RelativeOf" ColumnName="RelativeOf" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="IdentificationMark" ColumnName="IdentificationMark" />
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+                <ScalarProperty Name="GuestDependantPassDetailID" ColumnName="GuestDependantPassDetailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NSGEmployees">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.NSGEmployee">
+              <MappingFragment StoreEntitySet="NSGEmployee">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="QuarterNumber" ColumnName="QuarterNumber" />
+                <ScalarProperty Name="QuarterTypeID" ColumnName="QuarterTypeID" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="RankID" ColumnName="RankID" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="NSGEmployeeCode" ColumnName="NSGEmployeeCode" />
+                <ScalarProperty Name="NSGEmployeeID" ColumnName="NSGEmployeeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NSGPasses">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.NSGPass">
+              <MappingFragment StoreEntitySet="NSGPass">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="PassHolderPhoto" ColumnName="PassHolderPhoto" />
+                <ScalarProperty Name="StateID" ColumnName="StateID" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+                <ScalarProperty Name="PassHolderAddress" ColumnName="PassHolderAddress" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="PassTypeID" ColumnName="PassTypeID" />
+                <ScalarProperty Name="MachineID" ColumnName="MachineID" />
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutlivingPassDetails">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.OutlivingPassDetail">
+              <MappingFragment StoreEntitySet="OutlivingPassDetail">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="RankID" ColumnName="RankID" />
+                <ScalarProperty Name="NSGEmployeeCode" ColumnName="NSGEmployeeCode" />
+                <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+                <ScalarProperty Name="IdentificationMark" ColumnName="IdentificationMark" />
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+                <ScalarProperty Name="OutlivingPassDetailID" ColumnName="OutlivingPassDetailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CivilianPassDetailViews">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CivilianPassDetailView">
+              <MappingFragment StoreEntitySet="CivilianPassDetailView">
+                <ScalarProperty Name="PassHolderPhoto" ColumnName="PassHolderPhoto" />
+                <ScalarProperty Name="PassHolderAddress" ColumnName="PassHolderAddress" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="ContractorName" ColumnName="ContractorName" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="GuardianName" ColumnName="GuardianName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GuestDependentPassDetailViews">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.GuestDependentPassDetailView">
+              <MappingFragment StoreEntitySet="GuestDependentPassDetailView">
+                <ScalarProperty Name="PassHolderPhoto" ColumnName="PassHolderPhoto" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="RankName" ColumnName="RankName" />
+                <ScalarProperty Name="NSGEmployeeCode" ColumnName="NSGEmployeeCode" />
+                <ScalarProperty Name="RelativeOf" ColumnName="RelativeOf" />
+                <ScalarProperty Name="IdentificationMark" ColumnName="IdentificationMark" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CivilianVehiclePassViews">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.CivilianVehiclePassView">
+              <MappingFragment StoreEntitySet="CivilianVehiclePassView">
+                <ScalarProperty Name="PassHolderPhoto" ColumnName="PassHolderPhoto" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="VehicleMake" ColumnName="VehicleMake" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NSGPersonalVehiclePassViews">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.NSGPersonalVehiclePassView">
+              <MappingFragment StoreEntitySet="NSGPersonalVehiclePassView">
+                <ScalarProperty Name="PassHolderPhoto" ColumnName="PassHolderPhoto" />
+                <ScalarProperty Name="VehicleMake" ColumnName="VehicleMake" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="RankName" ColumnName="RankName" />
+                <ScalarProperty Name="NSGEmployeeCode" ColumnName="NSGEmployeeCode" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OutlivingPassViews">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.OutlivingPassView">
+              <MappingFragment StoreEntitySet="OutlivingPassView">
+                <ScalarProperty Name="PassHolderPhoto" ColumnName="PassHolderPhoto" />
+                <ScalarProperty Name="PassHolderAddress" ColumnName="PassHolderAddress" />
+                <ScalarProperty Name="IdentificationMark" ColumnName="IdentificationMark" />
+                <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+                <ScalarProperty Name="RankName" ColumnName="RankName" />
+                <ScalarProperty Name="NSGEmployeeCode" ColumnName="NSGEmployeeCode" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VehiclePassDetails">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.VehiclePassDetail">
+              <MappingFragment StoreEntitySet="VehiclePassDetail">
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+                <ScalarProperty Name="RankID" ColumnName="RankID" />
+                <ScalarProperty Name="NSGEmployeeCode" ColumnName="NSGEmployeeCode" />
+                <ScalarProperty Name="VehicleMake" ColumnName="VehicleMake" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+                <ScalarProperty Name="RegistrationNumber" ColumnName="RegistrationNumber" />
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+                <ScalarProperty Name="VehiclePassDetailID" ColumnName="VehiclePassDetailID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PassDocuments">
+            <EntityTypeMapping TypeName="NSGPassManagementModel.PassDocument">
+              <MappingFragment StoreEntitySet="PassDocument">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateUserID" ColumnName="UpdateUserID" />
+                <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+                <ScalarProperty Name="EntryUserID" ColumnName="EntryUserID" />
+                <ScalarProperty Name="DocumentPhoto" ColumnName="DocumentPhoto" />
+                <ScalarProperty Name="DocumentName" ColumnName="DocumentName" />
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+                <ScalarProperty Name="PassDocumentID" ColumnName="PassDocumentID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="PassHolderDetailsGet" FunctionName="NSGPassManagementModel.Store.PassHolderDetailsGet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="NSGPassManagementModel.PassHolderDetailsGet_Result">
+                <ScalarProperty Name="NSGPassID" ColumnName="NSGPassID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="PassTypeName" ColumnName="PassTypeName" />
+                <ScalarProperty Name="CityName" ColumnName="CityName" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+                <ScalarProperty Name="EntryBy" ColumnName="EntryBy" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

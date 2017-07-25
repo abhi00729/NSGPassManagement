@@ -1,0 +1,438 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NSGPassManagementDataSet" targetNamespace="http://tempuri.org/NSGPassManagementDataSet.xsd" xmlns:mstns="http://tempuri.org/NSGPassManagementDataSet.xsd" xmlns="http://tempuri.org/NSGPassManagementDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NSGPassManagementConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NSGPassManagementConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NSGPassManagement.Properties.Settings.GlobalReference.Default.NSGPassManagementConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CivilianPassDetailViewTableAdapter" GeneratorDataComponentClassName="CivilianPassDetailViewTableAdapter" Name="CivilianPassDetailView" UserDataComponentName="CivilianPassDetailViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NSGPassManagementConnectionString (Settings)" DbObjectName="NSGPassManagement.dbo.CivilianPassDetailView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NSGPassID, IssueDate, ExpiryDate, FullName, GuardianName, BirthDate, ContractorName, Designation, PassHolderAddress, PassHolderPhoto FROM dbo.CivilianPassDetailView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NSGPassID" DataSetColumn="NSGPassID" />
+              <Mapping SourceColumn="IssueDate" DataSetColumn="IssueDate" />
+              <Mapping SourceColumn="ExpiryDate" DataSetColumn="ExpiryDate" />
+              <Mapping SourceColumn="FullName" DataSetColumn="FullName" />
+              <Mapping SourceColumn="GuardianName" DataSetColumn="GuardianName" />
+              <Mapping SourceColumn="BirthDate" DataSetColumn="BirthDate" />
+              <Mapping SourceColumn="ContractorName" DataSetColumn="ContractorName" />
+              <Mapping SourceColumn="Designation" DataSetColumn="Designation" />
+              <Mapping SourceColumn="PassHolderAddress" DataSetColumn="PassHolderAddress" />
+              <Mapping SourceColumn="PassHolderPhoto" DataSetColumn="PassHolderPhoto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CivilianVehiclePassViewTableAdapter" GeneratorDataComponentClassName="CivilianVehiclePassViewTableAdapter" Name="CivilianVehiclePassView" UserDataComponentName="CivilianVehiclePassViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NSGPassManagementConnectionString (Settings)" DbObjectName="NSGPassManagement.dbo.CivilianVehiclePassView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NSGPassID, IssueDate, ExpiryDate, FullName, RegistrationNumber, VehicleType, VehicleMake, Designation, PassHolderPhoto FROM dbo.CivilianVehiclePassView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NSGPassID" DataSetColumn="NSGPassID" />
+              <Mapping SourceColumn="IssueDate" DataSetColumn="IssueDate" />
+              <Mapping SourceColumn="ExpiryDate" DataSetColumn="ExpiryDate" />
+              <Mapping SourceColumn="FullName" DataSetColumn="FullName" />
+              <Mapping SourceColumn="RegistrationNumber" DataSetColumn="RegistrationNumber" />
+              <Mapping SourceColumn="VehicleType" DataSetColumn="VehicleType" />
+              <Mapping SourceColumn="VehicleMake" DataSetColumn="VehicleMake" />
+              <Mapping SourceColumn="Designation" DataSetColumn="Designation" />
+              <Mapping SourceColumn="PassHolderPhoto" DataSetColumn="PassHolderPhoto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GuestDependentPassDetailViewTableAdapter" GeneratorDataComponentClassName="GuestDependentPassDetailViewTableAdapter" Name="GuestDependentPassDetailView" UserDataComponentName="GuestDependentPassDetailViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NSGPassManagementConnectionString (Settings)" DbObjectName="NSGPassManagement.dbo.GuestDependentPassDetailView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NSGPassID, IssueDate, ExpiryDate, FullName, Relationship, BirthDate, IdentificationMark, RelativeOf, NSGEmployeeCode, RankName, UnitName, PassHolderPhoto FROM dbo.GuestDependentPassDetailView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NSGPassID" DataSetColumn="NSGPassID" />
+              <Mapping SourceColumn="IssueDate" DataSetColumn="IssueDate" />
+              <Mapping SourceColumn="ExpiryDate" DataSetColumn="ExpiryDate" />
+              <Mapping SourceColumn="FullName" DataSetColumn="FullName" />
+              <Mapping SourceColumn="Relationship" DataSetColumn="Relationship" />
+              <Mapping SourceColumn="BirthDate" DataSetColumn="BirthDate" />
+              <Mapping SourceColumn="IdentificationMark" DataSetColumn="IdentificationMark" />
+              <Mapping SourceColumn="RelativeOf" DataSetColumn="RelativeOf" />
+              <Mapping SourceColumn="NSGEmployeeCode" DataSetColumn="NSGEmployeeCode" />
+              <Mapping SourceColumn="RankName" DataSetColumn="RankName" />
+              <Mapping SourceColumn="UnitName" DataSetColumn="UnitName" />
+              <Mapping SourceColumn="PassHolderPhoto" DataSetColumn="PassHolderPhoto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="NSGPersonalVehiclePassViewTableAdapter" GeneratorDataComponentClassName="NSGPersonalVehiclePassViewTableAdapter" Name="NSGPersonalVehiclePassView" UserDataComponentName="NSGPersonalVehiclePassViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NSGPassManagementConnectionString (Settings)" DbObjectName="NSGPassManagement.dbo.NSGPersonalVehiclePassView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NSGPassID, IssueDate, ExpiryDate, FullName, NSGEmployeeCode, RankName, UnitName, RegistrationNumber, VehicleType, VehicleMake, PassHolderPhoto FROM dbo.NSGPersonalVehiclePassView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NSGPassID" DataSetColumn="NSGPassID" />
+              <Mapping SourceColumn="IssueDate" DataSetColumn="IssueDate" />
+              <Mapping SourceColumn="ExpiryDate" DataSetColumn="ExpiryDate" />
+              <Mapping SourceColumn="FullName" DataSetColumn="FullName" />
+              <Mapping SourceColumn="NSGEmployeeCode" DataSetColumn="NSGEmployeeCode" />
+              <Mapping SourceColumn="RankName" DataSetColumn="RankName" />
+              <Mapping SourceColumn="UnitName" DataSetColumn="UnitName" />
+              <Mapping SourceColumn="RegistrationNumber" DataSetColumn="RegistrationNumber" />
+              <Mapping SourceColumn="VehicleType" DataSetColumn="VehicleType" />
+              <Mapping SourceColumn="VehicleMake" DataSetColumn="VehicleMake" />
+              <Mapping SourceColumn="PassHolderPhoto" DataSetColumn="PassHolderPhoto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OutlivingPassViewTableAdapter" GeneratorDataComponentClassName="OutlivingPassViewTableAdapter" Name="OutlivingPassView" UserDataComponentName="OutlivingPassViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NSGPassManagementConnectionString (Settings)" DbObjectName="NSGPassManagement.dbo.OutlivingPassView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT NSGPassID, IssueDate, ExpiryDate, FullName, NSGEmployeeCode, RankName, UnitName, BloodGroup, IdentificationMark, PassHolderAddress, PassHolderPhoto FROM dbo.OutlivingPassView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NSGPassID" DataSetColumn="NSGPassID" />
+              <Mapping SourceColumn="IssueDate" DataSetColumn="IssueDate" />
+              <Mapping SourceColumn="ExpiryDate" DataSetColumn="ExpiryDate" />
+              <Mapping SourceColumn="FullName" DataSetColumn="FullName" />
+              <Mapping SourceColumn="NSGEmployeeCode" DataSetColumn="NSGEmployeeCode" />
+              <Mapping SourceColumn="RankName" DataSetColumn="RankName" />
+              <Mapping SourceColumn="UnitName" DataSetColumn="UnitName" />
+              <Mapping SourceColumn="BloodGroup" DataSetColumn="BloodGroup" />
+              <Mapping SourceColumn="IdentificationMark" DataSetColumn="IdentificationMark" />
+              <Mapping SourceColumn="PassHolderAddress" DataSetColumn="PassHolderAddress" />
+              <Mapping SourceColumn="PassHolderPhoto" DataSetColumn="PassHolderPhoto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="NSGPassManagementDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="NSGPassManagementDataSet" msprop:Generator_UserDSName="NSGPassManagementDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CivilianPassDetailView" msprop:Generator_TableClassName="CivilianPassDetailViewDataTable" msprop:Generator_TableVarName="tableCivilianPassDetailView" msprop:Generator_TablePropName="CivilianPassDetailView" msprop:Generator_RowDeletingName="CivilianPassDetailViewRowDeleting" msprop:Generator_RowChangingName="CivilianPassDetailViewRowChanging" msprop:Generator_RowEvHandlerName="CivilianPassDetailViewRowChangeEventHandler" msprop:Generator_RowDeletedName="CivilianPassDetailViewRowDeleted" msprop:Generator_UserTableName="CivilianPassDetailView" msprop:Generator_RowChangedName="CivilianPassDetailViewRowChanged" msprop:Generator_RowEvArgName="CivilianPassDetailViewRowChangeEvent" msprop:Generator_RowClassName="CivilianPassDetailViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NSGPassID" msprop:Generator_ColumnVarNameInTable="columnNSGPassID" msprop:Generator_ColumnPropNameInRow="NSGPassID" msprop:Generator_ColumnPropNameInTable="NSGPassIDColumn" msprop:Generator_UserColumnName="NSGPassID" type="xs:long" />
+              <xs:element name="IssueDate" msprop:Generator_ColumnVarNameInTable="columnIssueDate" msprop:Generator_ColumnPropNameInRow="IssueDate" msprop:Generator_ColumnPropNameInTable="IssueDateColumn" msprop:Generator_UserColumnName="IssueDate" type="xs:dateTime" />
+              <xs:element name="ExpiryDate" msprop:Generator_ColumnVarNameInTable="columnExpiryDate" msprop:Generator_ColumnPropNameInRow="ExpiryDate" msprop:Generator_ColumnPropNameInTable="ExpiryDateColumn" msprop:Generator_UserColumnName="ExpiryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FullName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="501" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GuardianName" msprop:Generator_ColumnVarNameInTable="columnGuardianName" msprop:Generator_ColumnPropNameInRow="GuardianName" msprop:Generator_ColumnPropNameInTable="GuardianNameColumn" msprop:Generator_UserColumnName="GuardianName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BirthDate" msprop:Generator_ColumnVarNameInTable="columnBirthDate" msprop:Generator_ColumnPropNameInRow="BirthDate" msprop:Generator_ColumnPropNameInTable="BirthDateColumn" msprop:Generator_UserColumnName="BirthDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ContractorName" msprop:Generator_ColumnVarNameInTable="columnContractorName" msprop:Generator_ColumnPropNameInRow="ContractorName" msprop:Generator_ColumnPropNameInTable="ContractorNameColumn" msprop:Generator_UserColumnName="ContractorName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Designation" msprop:Generator_ColumnVarNameInTable="columnDesignation" msprop:Generator_ColumnPropNameInRow="Designation" msprop:Generator_ColumnPropNameInTable="DesignationColumn" msprop:Generator_UserColumnName="Designation">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PassHolderAddress" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPassHolderAddress" msprop:Generator_ColumnPropNameInRow="PassHolderAddress" msprop:Generator_ColumnPropNameInTable="PassHolderAddressColumn" msprop:Generator_UserColumnName="PassHolderAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="702" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PassHolderPhoto" msprop:Generator_ColumnVarNameInTable="columnPassHolderPhoto" msprop:Generator_ColumnPropNameInRow="PassHolderPhoto" msprop:Generator_ColumnPropNameInTable="PassHolderPhotoColumn" msprop:Generator_UserColumnName="PassHolderPhoto" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CivilianVehiclePassView" msprop:Generator_TableClassName="CivilianVehiclePassViewDataTable" msprop:Generator_TableVarName="tableCivilianVehiclePassView" msprop:Generator_TablePropName="CivilianVehiclePassView" msprop:Generator_RowDeletingName="CivilianVehiclePassViewRowDeleting" msprop:Generator_RowChangingName="CivilianVehiclePassViewRowChanging" msprop:Generator_RowEvHandlerName="CivilianVehiclePassViewRowChangeEventHandler" msprop:Generator_RowDeletedName="CivilianVehiclePassViewRowDeleted" msprop:Generator_UserTableName="CivilianVehiclePassView" msprop:Generator_RowChangedName="CivilianVehiclePassViewRowChanged" msprop:Generator_RowEvArgName="CivilianVehiclePassViewRowChangeEvent" msprop:Generator_RowClassName="CivilianVehiclePassViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NSGPassID" msprop:Generator_ColumnVarNameInTable="columnNSGPassID" msprop:Generator_ColumnPropNameInRow="NSGPassID" msprop:Generator_ColumnPropNameInTable="NSGPassIDColumn" msprop:Generator_UserColumnName="NSGPassID" type="xs:long" />
+              <xs:element name="IssueDate" msprop:Generator_ColumnVarNameInTable="columnIssueDate" msprop:Generator_ColumnPropNameInRow="IssueDate" msprop:Generator_ColumnPropNameInTable="IssueDateColumn" msprop:Generator_UserColumnName="IssueDate" type="xs:dateTime" />
+              <xs:element name="ExpiryDate" msprop:Generator_ColumnVarNameInTable="columnExpiryDate" msprop:Generator_ColumnPropNameInRow="ExpiryDate" msprop:Generator_ColumnPropNameInTable="ExpiryDateColumn" msprop:Generator_UserColumnName="ExpiryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FullName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="501" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegistrationNumber" msprop:Generator_ColumnVarNameInTable="columnRegistrationNumber" msprop:Generator_ColumnPropNameInRow="RegistrationNumber" msprop:Generator_ColumnPropNameInTable="RegistrationNumberColumn" msprop:Generator_UserColumnName="RegistrationNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VehicleType" msprop:Generator_ColumnVarNameInTable="columnVehicleType" msprop:Generator_ColumnPropNameInRow="VehicleType" msprop:Generator_ColumnPropNameInTable="VehicleTypeColumn" msprop:Generator_UserColumnName="VehicleType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VehicleMake" msprop:Generator_ColumnVarNameInTable="columnVehicleMake" msprop:Generator_ColumnPropNameInRow="VehicleMake" msprop:Generator_ColumnPropNameInTable="VehicleMakeColumn" msprop:Generator_UserColumnName="VehicleMake">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Designation" msprop:Generator_ColumnVarNameInTable="columnDesignation" msprop:Generator_ColumnPropNameInRow="Designation" msprop:Generator_ColumnPropNameInTable="DesignationColumn" msprop:Generator_UserColumnName="Designation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PassHolderPhoto" msprop:Generator_ColumnVarNameInTable="columnPassHolderPhoto" msprop:Generator_ColumnPropNameInRow="PassHolderPhoto" msprop:Generator_ColumnPropNameInTable="PassHolderPhotoColumn" msprop:Generator_UserColumnName="PassHolderPhoto" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="GuestDependentPassDetailView" msprop:Generator_TableClassName="GuestDependentPassDetailViewDataTable" msprop:Generator_TableVarName="tableGuestDependentPassDetailView" msprop:Generator_TablePropName="GuestDependentPassDetailView" msprop:Generator_RowDeletingName="GuestDependentPassDetailViewRowDeleting" msprop:Generator_RowChangingName="GuestDependentPassDetailViewRowChanging" msprop:Generator_RowEvHandlerName="GuestDependentPassDetailViewRowChangeEventHandler" msprop:Generator_RowDeletedName="GuestDependentPassDetailViewRowDeleted" msprop:Generator_UserTableName="GuestDependentPassDetailView" msprop:Generator_RowChangedName="GuestDependentPassDetailViewRowChanged" msprop:Generator_RowEvArgName="GuestDependentPassDetailViewRowChangeEvent" msprop:Generator_RowClassName="GuestDependentPassDetailViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NSGPassID" msprop:Generator_ColumnVarNameInTable="columnNSGPassID" msprop:Generator_ColumnPropNameInRow="NSGPassID" msprop:Generator_ColumnPropNameInTable="NSGPassIDColumn" msprop:Generator_UserColumnName="NSGPassID" type="xs:long" />
+              <xs:element name="IssueDate" msprop:Generator_ColumnVarNameInTable="columnIssueDate" msprop:Generator_ColumnPropNameInRow="IssueDate" msprop:Generator_ColumnPropNameInTable="IssueDateColumn" msprop:Generator_UserColumnName="IssueDate" type="xs:dateTime" />
+              <xs:element name="ExpiryDate" msprop:Generator_ColumnVarNameInTable="columnExpiryDate" msprop:Generator_ColumnPropNameInRow="ExpiryDate" msprop:Generator_ColumnPropNameInTable="ExpiryDateColumn" msprop:Generator_UserColumnName="ExpiryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FullName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="501" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Relationship" msprop:Generator_ColumnVarNameInTable="columnRelationship" msprop:Generator_ColumnPropNameInRow="Relationship" msprop:Generator_ColumnPropNameInTable="RelationshipColumn" msprop:Generator_UserColumnName="Relationship" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BirthDate" msprop:Generator_ColumnVarNameInTable="columnBirthDate" msprop:Generator_ColumnPropNameInRow="BirthDate" msprop:Generator_ColumnPropNameInTable="BirthDateColumn" msprop:Generator_UserColumnName="BirthDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IdentificationMark" msprop:Generator_ColumnVarNameInTable="columnIdentificationMark" msprop:Generator_ColumnPropNameInRow="IdentificationMark" msprop:Generator_ColumnPropNameInTable="IdentificationMarkColumn" msprop:Generator_UserColumnName="IdentificationMark">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RelativeOf" msprop:Generator_ColumnVarNameInTable="columnRelativeOf" msprop:Generator_ColumnPropNameInRow="RelativeOf" msprop:Generator_ColumnPropNameInTable="RelativeOfColumn" msprop:Generator_UserColumnName="RelativeOf">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NSGEmployeeCode" msprop:Generator_ColumnVarNameInTable="columnNSGEmployeeCode" msprop:Generator_ColumnPropNameInRow="NSGEmployeeCode" msprop:Generator_ColumnPropNameInTable="NSGEmployeeCodeColumn" msprop:Generator_UserColumnName="NSGEmployeeCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RankName" msprop:Generator_ColumnVarNameInTable="columnRankName" msprop:Generator_ColumnPropNameInRow="RankName" msprop:Generator_ColumnPropNameInTable="RankNameColumn" msprop:Generator_UserColumnName="RankName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnitName" msprop:Generator_ColumnVarNameInTable="columnUnitName" msprop:Generator_ColumnPropNameInRow="UnitName" msprop:Generator_ColumnPropNameInTable="UnitNameColumn" msprop:Generator_UserColumnName="UnitName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PassHolderPhoto" msprop:Generator_ColumnVarNameInTable="columnPassHolderPhoto" msprop:Generator_ColumnPropNameInRow="PassHolderPhoto" msprop:Generator_ColumnPropNameInTable="PassHolderPhotoColumn" msprop:Generator_UserColumnName="PassHolderPhoto" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NSGPersonalVehiclePassView" msprop:Generator_TableClassName="NSGPersonalVehiclePassViewDataTable" msprop:Generator_TableVarName="tableNSGPersonalVehiclePassView" msprop:Generator_TablePropName="NSGPersonalVehiclePassView" msprop:Generator_RowDeletingName="NSGPersonalVehiclePassViewRowDeleting" msprop:Generator_RowChangingName="NSGPersonalVehiclePassViewRowChanging" msprop:Generator_RowEvHandlerName="NSGPersonalVehiclePassViewRowChangeEventHandler" msprop:Generator_RowDeletedName="NSGPersonalVehiclePassViewRowDeleted" msprop:Generator_UserTableName="NSGPersonalVehiclePassView" msprop:Generator_RowChangedName="NSGPersonalVehiclePassViewRowChanged" msprop:Generator_RowEvArgName="NSGPersonalVehiclePassViewRowChangeEvent" msprop:Generator_RowClassName="NSGPersonalVehiclePassViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NSGPassID" msprop:Generator_ColumnVarNameInTable="columnNSGPassID" msprop:Generator_ColumnPropNameInRow="NSGPassID" msprop:Generator_ColumnPropNameInTable="NSGPassIDColumn" msprop:Generator_UserColumnName="NSGPassID" type="xs:long" />
+              <xs:element name="IssueDate" msprop:Generator_ColumnVarNameInTable="columnIssueDate" msprop:Generator_ColumnPropNameInRow="IssueDate" msprop:Generator_ColumnPropNameInTable="IssueDateColumn" msprop:Generator_UserColumnName="IssueDate" type="xs:dateTime" />
+              <xs:element name="ExpiryDate" msprop:Generator_ColumnVarNameInTable="columnExpiryDate" msprop:Generator_ColumnPropNameInRow="ExpiryDate" msprop:Generator_ColumnPropNameInTable="ExpiryDateColumn" msprop:Generator_UserColumnName="ExpiryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FullName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="501" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NSGEmployeeCode" msprop:Generator_ColumnVarNameInTable="columnNSGEmployeeCode" msprop:Generator_ColumnPropNameInRow="NSGEmployeeCode" msprop:Generator_ColumnPropNameInTable="NSGEmployeeCodeColumn" msprop:Generator_UserColumnName="NSGEmployeeCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RankName" msprop:Generator_ColumnVarNameInTable="columnRankName" msprop:Generator_ColumnPropNameInRow="RankName" msprop:Generator_ColumnPropNameInTable="RankNameColumn" msprop:Generator_UserColumnName="RankName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnitName" msprop:Generator_ColumnVarNameInTable="columnUnitName" msprop:Generator_ColumnPropNameInRow="UnitName" msprop:Generator_ColumnPropNameInTable="UnitNameColumn" msprop:Generator_UserColumnName="UnitName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RegistrationNumber" msprop:Generator_ColumnVarNameInTable="columnRegistrationNumber" msprop:Generator_ColumnPropNameInRow="RegistrationNumber" msprop:Generator_ColumnPropNameInTable="RegistrationNumberColumn" msprop:Generator_UserColumnName="RegistrationNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VehicleType" msprop:Generator_ColumnVarNameInTable="columnVehicleType" msprop:Generator_ColumnPropNameInRow="VehicleType" msprop:Generator_ColumnPropNameInTable="VehicleTypeColumn" msprop:Generator_UserColumnName="VehicleType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VehicleMake" msprop:Generator_ColumnVarNameInTable="columnVehicleMake" msprop:Generator_ColumnPropNameInRow="VehicleMake" msprop:Generator_ColumnPropNameInTable="VehicleMakeColumn" msprop:Generator_UserColumnName="VehicleMake">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PassHolderPhoto" msprop:Generator_ColumnVarNameInTable="columnPassHolderPhoto" msprop:Generator_ColumnPropNameInRow="PassHolderPhoto" msprop:Generator_ColumnPropNameInTable="PassHolderPhotoColumn" msprop:Generator_UserColumnName="PassHolderPhoto" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OutlivingPassView" msprop:Generator_TableClassName="OutlivingPassViewDataTable" msprop:Generator_TableVarName="tableOutlivingPassView" msprop:Generator_TablePropName="OutlivingPassView" msprop:Generator_RowDeletingName="OutlivingPassViewRowDeleting" msprop:Generator_RowChangingName="OutlivingPassViewRowChanging" msprop:Generator_RowEvHandlerName="OutlivingPassViewRowChangeEventHandler" msprop:Generator_RowDeletedName="OutlivingPassViewRowDeleted" msprop:Generator_UserTableName="OutlivingPassView" msprop:Generator_RowChangedName="OutlivingPassViewRowChanged" msprop:Generator_RowEvArgName="OutlivingPassViewRowChangeEvent" msprop:Generator_RowClassName="OutlivingPassViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NSGPassID" msprop:Generator_ColumnVarNameInTable="columnNSGPassID" msprop:Generator_ColumnPropNameInRow="NSGPassID" msprop:Generator_ColumnPropNameInTable="NSGPassIDColumn" msprop:Generator_UserColumnName="NSGPassID" type="xs:long" />
+              <xs:element name="IssueDate" msprop:Generator_ColumnVarNameInTable="columnIssueDate" msprop:Generator_ColumnPropNameInRow="IssueDate" msprop:Generator_ColumnPropNameInTable="IssueDateColumn" msprop:Generator_UserColumnName="IssueDate" type="xs:dateTime" />
+              <xs:element name="ExpiryDate" msprop:Generator_ColumnVarNameInTable="columnExpiryDate" msprop:Generator_ColumnPropNameInRow="ExpiryDate" msprop:Generator_ColumnPropNameInTable="ExpiryDateColumn" msprop:Generator_UserColumnName="ExpiryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="FullName" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="501" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NSGEmployeeCode" msprop:Generator_ColumnVarNameInTable="columnNSGEmployeeCode" msprop:Generator_ColumnPropNameInRow="NSGEmployeeCode" msprop:Generator_ColumnPropNameInTable="NSGEmployeeCodeColumn" msprop:Generator_UserColumnName="NSGEmployeeCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RankName" msprop:Generator_ColumnVarNameInTable="columnRankName" msprop:Generator_ColumnPropNameInRow="RankName" msprop:Generator_ColumnPropNameInTable="RankNameColumn" msprop:Generator_UserColumnName="RankName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UnitName" msprop:Generator_ColumnVarNameInTable="columnUnitName" msprop:Generator_ColumnPropNameInRow="UnitName" msprop:Generator_ColumnPropNameInTable="UnitNameColumn" msprop:Generator_UserColumnName="UnitName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BloodGroup" msprop:Generator_ColumnVarNameInTable="columnBloodGroup" msprop:Generator_ColumnPropNameInRow="BloodGroup" msprop:Generator_ColumnPropNameInTable="BloodGroupColumn" msprop:Generator_UserColumnName="BloodGroup">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdentificationMark" msprop:Generator_ColumnVarNameInTable="columnIdentificationMark" msprop:Generator_ColumnPropNameInRow="IdentificationMark" msprop:Generator_ColumnPropNameInTable="IdentificationMarkColumn" msprop:Generator_UserColumnName="IdentificationMark">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PassHolderAddress" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPassHolderAddress" msprop:Generator_ColumnPropNameInRow="PassHolderAddress" msprop:Generator_ColumnPropNameInTable="PassHolderAddressColumn" msprop:Generator_UserColumnName="PassHolderAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="702" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PassHolderPhoto" msprop:Generator_ColumnVarNameInTable="columnPassHolderPhoto" msprop:Generator_ColumnPropNameInRow="PassHolderPhoto" msprop:Generator_ColumnPropNameInTable="PassHolderPhotoColumn" msprop:Generator_UserColumnName="PassHolderPhoto" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CivilianPassDetailView" />
+      <xs:field xpath="mstns:NSGPassID" />
+    </xs:unique>
+    <xs:unique name="CivilianVehiclePassView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CivilianVehiclePassView" />
+      <xs:field xpath="mstns:NSGPassID" />
+    </xs:unique>
+    <xs:unique name="GuestDependentPassDetailView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GuestDependentPassDetailView" />
+      <xs:field xpath="mstns:NSGPassID" />
+    </xs:unique>
+    <xs:unique name="NSGPersonalVehiclePassView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:NSGPersonalVehiclePassView" />
+      <xs:field xpath="mstns:NSGPassID" />
+    </xs:unique>
+    <xs:unique name="OutlivingPassView_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:OutlivingPassView" />
+      <xs:field xpath="mstns:NSGPassID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

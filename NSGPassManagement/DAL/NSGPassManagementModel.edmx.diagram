@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a0dd814698164a88a1627d14f22c72e4" Name="Diagram1">
+        <EntityTypeShape EntityType="NSGPassManagementModel.CivilianPassDetail" Width="1.5" PointX="6" PointY="25.125" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.CoreCity" Width="1.5" PointX="5.25" PointY="31.625" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.CoreIdentityType" Width="1.5" PointX="3" PointY="44.75" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.CorePassType" Width="1.5" PointX="3" PointY="25.625" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.CoreQuarterType" Width="1.5" PointX="3" PointY="21.75" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.CoreRank" Width="1.5" PointX="3" PointY="13.5" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.CoreRelationship" Width="1.5" PointX="3" PointY="37.625" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.CoreState" Width="1.5" PointX="3" PointY="41.125" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.CoreUnit" Width="1.5" PointX="3" PointY="33.375" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.CoreUser" Width="1.5" PointX="0.75" PointY="22.375" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.ErrorLog" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.GuestDependantPassDetail" Width="1.5" PointX="13.75" PointY="26.625" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.NSGEmployee" Width="1.5" PointX="8.25" PointY="22.875" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.NSGPass" Width="1.5" PointX="7.5" PointY="30" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.OutlivingPassDetail" Width="1.5" PointX="10.75" PointY="24.125" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CivilianPassDetail_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CivilianPassDetail_NSGPassID_NSGPass_NSGPassID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CivilianPassDetail_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreCity_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreCity_StateID_CoreState_StateID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreCity_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_NSGPass_CityID_CoreCity_CityID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_IdentityType_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_IdentityType_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CorePassType_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CorePassType_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_NSGPass_PassTypeID_CorePassType_PassTypeID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreQuarterType_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreQuarterType_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_NSGEmployee_QuarterTypeID_CoreQuarterType_QuarterTypeID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreRank_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreRank_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_GuestDependantPassDetail_RankID_CoreRank_RankID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_NSGEmployee_RankID_CoreRank_RankID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_OutlivingPassDetail_RankID_CoreRank_RankID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreRelationship_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreRelationship_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_GuestDependantPassDetail_RelationshipID_CoreRelationship_RelationshipID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreState_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreState_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_NSGPass_StateID_CoreState_StateID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreUnit_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_CoreUnit_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_GuestDependantPassDetail_UnitID_CoreUnit_UnitID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_NSGEmployee_UnitID_CoreUnit_UnitID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_OutlivingPassDetail_UnitID_CoreUnit_UnitID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_GuestDependantPassDetail_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_GuestDependantPassDetail_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_NSGEmployee_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_NSGEmployee_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_NSGPass_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_NSGPass_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_OutlivingPassDetail_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_OutlivingPassDetail_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_GuestDependantPassDetail_NSGPassID_NSGPass_NSGPassID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_OutlivingPassDetail_NSGPassID_NSGPass_NSGPassID" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.CivilianPassDetailView" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.GuestDependentPassDetailView" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.CivilianVehiclePassView" Width="1.5" PointX="3.375" PointY="4.75" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.NSGPersonalVehiclePassView" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.OutlivingPassView" Width="1.5" PointX="7.875" PointY="4.75" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.VehiclePassDetail" Width="1.5" PointX="13.75" PointY="21" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_VehiclePassDetail_RankID_CoreRank_RankID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_VehiclePassDetail_UnitID_CoreUnit_UnitID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_VehiclePassDetail_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_VehiclePassDetail_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_VehiclePassDetail_NSGPassID_NSGPass_NSGPassID" />
+        <EntityTypeShape EntityType="NSGPassManagementModel.PassDocument" Width="1.5" PointX="9.75" PointY="29.875" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_PassDocument_EntryUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_PassDocument_UpdateUserID_CoreUser_CoreUserID" />
+        <AssociationConnector Association="NSGPassManagementModel.FK_PassDocument_NSGPassID_NSGPass_NSGPassID" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
