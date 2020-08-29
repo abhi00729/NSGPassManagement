@@ -14,11 +14,12 @@ CREATE PROCEDURE dbo.PassHolderDetailsGet
 	@ExpiryDate DATETIME = NULL,
 	@PassID BIGINT = NULL,
 	@PersonName VARCHAR(500) = NULL,
-	@PassTypeID INT = NULL
+	@PassTypeID INT = NULL,
+	@VehicleNumber VARCHAR(20) = NULL
 )
 AS
 /*
-exec dbo.PassHolderDetailsGet '2016-12-11 00:00:00.000', '2016-12-12 23:59:59.000', null, null, 0
+exec dbo.PassHolderDetailsGet NULL, NULL, NULL, '', NULL, ''
 */
 BEGIN
 	SET NOCOUNT ON
@@ -30,7 +31,17 @@ BEGIN
 		SET @ExpiryDate = DATEADD(SECOND, -1, CAST(CAST(@ExpiryDate + 1 AS DATE) AS DATETIME))
 	END
 
-	SELECT
+	IF(LTRIM(@PersonName) = '')
+	BEGIN
+		SET @PersonName = NULL
+	END
+
+	IF(LTRIM(@VehicleNumber) = '')
+	BEGIN
+		SET @VehicleNumber = NULL
+	END
+
+	SELECT DISTINCT
 		NP.NSGPassID,
 		NP.FirstName,
 		NP.LastName,
@@ -39,6 +50,7 @@ BEGIN
 		CPT.PassTypeName,
 		CC.CityName,
 		CS.StateName,
+		VPD.RegistrationNumber,
 		CUREN.FirstName + ' ' + CUREN.LastName AS EntryBy
 	FROM dbo.NSGPass (NOLOCK) NP
 	INNER JOIN dbo.CorePassType (NOLOCK) CPT
@@ -50,12 +62,15 @@ BEGIN
 	LEFT JOIN dbo.CoreUser (NOLOCK) CUREX
 		ON CUREX.CoreUserID = NP.UpdateUserID
 	LEFT JOIN dbo.CoreCity (NOLOCK) CC 
-		ON cc.CityID = NP.CityID
+		ON CC.CityID = NP.CityID
+	LEFT JOIN dbo.VehiclePassDetail (NOLOCK) VPD
+		ON NP.NSGPassID = VPD.NSGPassID
 	WHERE (NP.IssueDate >= @IssueDate OR @IssueDate IS NULL)
 		AND (NP.ExpiryDate <= @ExpiryDate OR @ExpiryDate IS NULL)
 		AND (NP.NSGPassID = @PassID OR @PassID IS NULL)
 		AND (NP.FirstName LIKE @PersonName OR NP.LastName LIKE @PersonName)
 		AND (NP.PassTypeID = @PassTypeID OR @PassTypeID IS NULL)
+		AND (VPD.RegistrationNumber = @VehicleNumber OR @VehicleNumber IS NULL)
 	ORDER BY NP.NSGPassID DESC
 
 	SET NOCOUNT OFF
