@@ -6,8 +6,8 @@
         <Source>Embedded</Source>
         <Value>NSGPassRightCornerImage</Value>
         <Sizing>FitProportional</Sizing>
-        <Top>0.025in</Top>
-        <Left>0.02778in</Left>
+        <Top>0.01042in</Top>
+        <Left>0.01389in</Left>
         <Height>0.375in</Height>
         <Width>0.375in</Width>
         <Style>
@@ -37,15 +37,15 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Dependent Card # </Value>
+                <Value>NSG Personal Vehicle Pass # </Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontSize>8pt</FontSize>
                 </Style>
               </TextRun>
               <TextRun>
                 <Value>=Fields!NSGPassID.Value</Value>
                 <Style>
-                  <FontSize>9pt</FontSize>
+                  <FontSize>8pt</FontSize>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -57,7 +57,7 @@
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Left>0.44445in</Left>
         <Height>0.38542in</Height>
-        <Width>2.11111in</Width>
+        <Width>2.23611in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -74,8 +74,8 @@
         <Value>=First(Fields!PassHolderPhoto.Value, "reportDataSource")</Value>
         <MIMEType>image/bmp</MIMEType>
         <Sizing>Fit</Sizing>
-        <Top>0.69027in</Top>
-        <Height>0.85833in</Height>
+        <Top>0.70833in</Top>
+        <Height>0.95833in</Height>
         <Width>0.82292in</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -95,7 +95,7 @@
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -105,7 +105,7 @@ Year(Fields!IssueDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -113,9 +113,9 @@ Year(Fields!IssueDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.46944in</Top>
+        <Top>0.43194in</Top>
         <Height>0.18333in</Height>
-        <Width>1.27292in</Width>
+        <Width>1.30417in</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -138,7 +138,7 @@ Year(Fields!IssueDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -148,7 +148,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -156,8 +156,8 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.46944in</Top>
-        <Left>1.35556in</Left>
+        <Top>0.43194in</Top>
+        <Left>1.44306in</Left>
         <Height>0.18333in</Height>
         <Width>1.3625in</Width>
         <ZIndex>4</ZIndex>
@@ -178,11 +178,11 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Name: </Value>
+                <Value>Owner Name: </Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -190,7 +190,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -198,10 +198,10 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.6986in</Top>
+        <Top>0.67083in</Top>
         <Left>0.86459in</Left>
         <Height>0.18333in</Height>
-        <Width>2.23264in</Width>
+        <Width>2.21806in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -220,19 +220,19 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Relation: </Value>
+                <Value>Force No: </Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Fields!Relationship.Value</Value>
+                <Value>=Fields!NSGEmployeeCode.Value</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -240,10 +240,10 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.95138in</Top>
+        <Top>0.89861in</Top>
         <Left>0.86459in</Left>
         <Height>0.18333in</Height>
-        <Width>1.18958in</Width>
+        <Width>2.21806in</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -256,25 +256,24 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
         </Style>
       </Textbox>
       <Textbox Name="Textbox8">
-        <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>ID Mark: </Value>
+                <Value>Regn. No: </Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Fields!IdentificationMark.Value</Value>
+                <Value>=Fields!RegistrationNumber.Value</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -282,10 +281,10 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.20415in</Top>
+        <Top>1.34999in</Top>
         <Left>0.86459in</Left>
         <Height>0.18333in</Height>
-        <Width>2.23264in</Width>
+        <Width>2.21806in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -298,25 +297,24 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
         </Style>
       </Textbox>
       <Textbox Name="Textbox9">
-        <CanGrow>false</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Relative Of: </Value>
+                <Value>Vehicle Type: </Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Fields!RelativeOf.Value</Value>
+                <Value>=Fields!VehicleType.Value</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -324,10 +322,10 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.35693in</Top>
+        <Top>1.59026in</Top>
         <Left>0.86459in</Left>
         <Height>0.18333in</Height>
-        <Width>1.4507in</Width>
+        <Width>2.21806in</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -349,7 +347,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Value>Authorized Signatory</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
-                  <FontSize>6pt</FontSize>
+                  <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <TextDecoration>None</TextDecoration>
                   <Color>#000000</Color>
@@ -362,7 +360,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.50000in</Top>
+        <Top>1.7111in</Top>
         <Height>0.30693in</Height>
         <Width>0.82292in</Width>
         <ZIndex>9</ZIndex>
@@ -376,28 +374,25 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox12">
-        <CanGrow>true</CanGrow>
+      <Textbox Name="Textbox14">
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>DOB: </Value>
+                <Value>Unit: </Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Day(Fields!BirthDate.Value).ToString() + "-" + 
-MonthName(Month(Fields!BirthDate.Value), True) + "-" + 
-Year(Fields!BirthDate.Value).ToString()</Value>
+                <Value>=Fields!UnitName.Value</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -405,10 +400,10 @@ Year(Fields!BirthDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.96111in</Top>
-        <Left>1.90973in</Left>
+        <Top>1.13888in</Top>
+        <Left>2.00903in</Left>
         <Height>0.1736in</Height>
-        <Width>0.9875in</Width>
+        <Width>1.07361in</Width>
         <ZIndex>10</ZIndex>
         <Style>
           <Border>
@@ -431,7 +426,7 @@ Year(Fields!BirthDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -439,7 +434,7 @@ Year(Fields!BirthDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -447,10 +442,10 @@ Year(Fields!BirthDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.36666in</Top>
-        <Left>2.30473in</Left>
+        <Top>1.13888in</Top>
+        <Left>0.86459in</Left>
         <Height>0.1736in</Height>
-        <Width>0.84792in</Width>
+        <Width>1.11667in</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -462,26 +457,25 @@ Year(Fields!BirthDate.Value).ToString()</Value>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox14">
-        <CanGrow>true</CanGrow>
+      <Textbox Name="Textbox10">
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Unit: </Value>
+                <Value>Vehicle Make: </Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
               <TextRun>
-                <Value>=Fields!UnitName.Value</Value>
+                <Value>=Fields!VehicleMake.Value</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
+                  <Color>#ffdd00</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -489,10 +483,10 @@ Year(Fields!BirthDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.55000in</Top>
+        <Top>1.83194in</Top>
         <Left>0.86459in</Left>
-        <Height>0.1736in</Height>
-        <Width>1.00951in</Width>
+        <Height>0.18333in</Height>
+        <Width>2.21806in</Width>
         <ZIndex>12</ZIndex>
         <Style>
           <Border>
@@ -504,53 +498,11 @@ Year(Fields!BirthDate.Value).ToString()</Value>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox15">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Force No: </Value>
-                <Style>
-                  <FontSize>7pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>=Fields!NSGEmployeeCode.Value</Value>
-                <Style>
-                  <FontSize>7pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <Color>#000000</Color>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.55000in</Top>
-        <Left>1.70355in</Left>
-        <Height>0.1736in</Height>
-        <Width>1.14368in</Width>
-        <ZIndex>13</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
     </ReportItems>
-    <Height>2.125in</Height>
+    <Height>2.07777in</Height>
     <Style />
   </Body>
-  <Width>3.09723in</Width>
+  <Width>3.125in</Width>
   <Page>
     <PageHeight>2.1in</PageHeight>
     <PageWidth>3.2in</PageWidth>
@@ -589,22 +541,6 @@ Year(Fields!BirthDate.Value).ToString()</Value>
           <DataField>FullName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Relationship">
-          <DataField>Relationship</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="BirthDate">
-          <DataField>BirthDate</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="IdentificationMark">
-          <DataField>IdentificationMark</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="RelativeOf">
-          <DataField>RelativeOf</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="NSGEmployeeCode">
           <DataField>NSGEmployeeCode</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -617,6 +553,18 @@ Year(Fields!BirthDate.Value).ToString()</Value>
           <DataField>UnitName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="RegistrationNumber">
+          <DataField>RegistrationNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VehicleType">
+          <DataField>VehicleType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="VehicleMake">
+          <DataField>VehicleMake</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="PassHolderPhoto">
           <DataField>PassHolderPhoto</DataField>
           <rd:TypeName>System.Byte[]</rd:TypeName>
@@ -625,10 +573,10 @@ Year(Fields!BirthDate.Value).ToString()</Value>
       <rd:DataSetInfo>
         <rd:DataSetName>NSGPassManagementDataSet</rd:DataSetName>
         <rd:SchemaPath>D:\MyProjects\NSGPassManagement\NSGPassManagement\NSGPassManagementDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>GuestDependentPassDetailView</rd:TableName>
+        <rd:TableName>NSGPersonalVehiclePassView</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>GuestDependentPassDetailViewTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>NSGPersonalVehiclePassViewTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

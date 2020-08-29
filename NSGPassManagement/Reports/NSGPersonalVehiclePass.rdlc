@@ -95,7 +95,7 @@
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -105,7 +105,7 @@ Year(Fields!IssueDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -113,7 +113,7 @@ Year(Fields!IssueDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.46944in</Top>
+        <Top>0.43194in</Top>
         <Height>0.18333in</Height>
         <Width>1.30417in</Width>
         <ZIndex>3</ZIndex>
@@ -138,7 +138,7 @@ Year(Fields!IssueDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -148,7 +148,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -156,10 +156,10 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.46944in</Top>
-        <Left>1.44306in</Left>
+        <Top>0.43194in</Top>
+        <Left>1.31806in</Left>
         <Height>0.18333in</Height>
-        <Width>1.2375in</Width>
+        <Width>1.3625in</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -182,7 +182,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -190,7 +190,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -198,7 +198,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.70833in</Top>
+        <Top>0.67083in</Top>
         <Left>0.86459in</Left>
         <Height>0.18333in</Height>
         <Width>2.21806in</Width>
@@ -224,7 +224,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -232,7 +232,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -240,7 +240,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.96111in</Top>
+        <Top>0.89861in</Top>
         <Left>0.86459in</Left>
         <Height>0.18333in</Height>
         <Width>2.21806in</Width>
@@ -266,7 +266,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -274,7 +274,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -282,7 +282,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.41249in</Top>
+        <Top>1.34999in</Top>
         <Left>0.86459in</Left>
         <Height>0.18333in</Height>
         <Width>2.21806in</Width>
@@ -308,7 +308,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -316,7 +316,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -324,7 +324,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.65276in</Top>
+        <Top>1.59026in</Top>
         <Left>0.86459in</Left>
         <Height>0.18333in</Height>
         <Width>2.21806in</Width>
@@ -362,7 +362,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.7361in</Top>
+        <Top>1.7111in</Top>
         <Height>0.30693in</Height>
         <Width>0.82292in</Width>
         <ZIndex>9</ZIndex>
@@ -387,7 +387,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -395,7 +395,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -403,7 +403,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.20138in</Top>
+        <Top>1.13888in</Top>
         <Left>2.00903in</Left>
         <Height>0.1736in</Height>
         <Width>1.07361in</Width>
@@ -429,7 +429,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -437,7 +437,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -445,7 +445,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.20138in</Top>
+        <Top>1.13888in</Top>
         <Left>0.86459in</Left>
         <Height>0.1736in</Height>
         <Width>1.11667in</Width>
@@ -471,7 +471,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -479,7 +479,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>#844609</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -487,7 +487,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.89444in</Top>
+        <Top>1.83194in</Top>
         <Left>0.86459in</Left>
         <Height>0.18333in</Height>
         <Width>2.21806in</Width>

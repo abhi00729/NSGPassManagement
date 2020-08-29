@@ -248,7 +248,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
         </Style>
       </Textbox>
       <Textbox Name="Textbox8">
-        <CanGrow>true</CanGrow>
+        <CanGrow>false</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>

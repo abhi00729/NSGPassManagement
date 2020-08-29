@@ -95,7 +95,7 @@
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -105,7 +105,7 @@ Year(Fields!IssueDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -138,7 +138,7 @@ Year(Fields!IssueDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -148,7 +148,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -181,7 +181,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -189,7 +189,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -222,7 +222,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -230,7 +230,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -263,7 +263,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -271,7 +271,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -304,7 +304,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -312,7 +312,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -382,7 +382,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -390,7 +390,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -423,7 +423,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -431,7 +431,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -464,7 +464,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
               <TextRun>
@@ -472,7 +472,7 @@ Year(Fields!ExpiryDate.Value).ToString()</Value>
                 <Style>
                   <FontSize>7pt</FontSize>
                   <FontWeight>Bold</FontWeight>
-                  <Color>Purple</Color>
+                  <Color>#000000</Color>
                 </Style>
               </TextRun>
             </TextRuns>
